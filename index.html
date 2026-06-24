@@ -12,9 +12,9 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --primary: #6C63FF;
-      --primary-dark: #5A52E0;
-      --primary-light: #EEF0FF;
+      --primary: #2E6FA8;
+      --primary-dark: #1F5683;
+      --primary-light: #DCE8F2;
       --green: #34C759;
       --orange: #FF9500;
       --text: #1A1A2E;
@@ -44,7 +44,6 @@
       background: rgba(255,255,255,0.92);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
       padding: 0 5%;
       height: 68px;
       display: flex;
@@ -62,7 +61,7 @@
     .nav-logo-icon {
       width: 38px;
       height: 38px;
-      background: linear-gradient(135deg, var(--primary), #A78BFA);
+      background: linear-gradient(135deg, var(--primary), #4789BC);
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -99,12 +98,22 @@
 
     /* ── HERO ── */
     .hero {
-      padding: 100px 5% 80px;
-      text-align: center;
-      background: linear-gradient(180deg, #F5F3FF 0%, #FFFFFF 100%);
+      padding: 80px 5%;
+      background: linear-gradient(180deg, #EEF5FB 0%, #FFFFFF 100%);
       overflow: hidden;
       position: relative;
     }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-text { text-align: left; }
 
     .hero-badge {
       display: inline-flex;
@@ -116,40 +125,54 @@
       font-weight: 600;
       padding: 6px 14px;
       border-radius: 50px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     .hero h1 {
-      font-size: clamp(38px, 6vw, 72px);
+      font-size: clamp(40px, 5.2vw, 68px);
       font-weight: 900;
-      line-height: 1.08;
+      line-height: 1.15;
       letter-spacing: -2px;
-      max-width: 800px;
-      margin: 0 auto 20px;
+      margin: 0 0 22px;
       color: var(--text);
     }
 
     .hero h1 span {
-      background: linear-gradient(135deg, var(--primary), #A78BFA);
+      display: block;
+      padding-bottom: 0.08em;
+      background: linear-gradient(135deg, var(--primary), #4789BC);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     .hero-sub {
-      font-size: clamp(16px, 2vw, 20px);
+      font-size: clamp(16px, 1.6vw, 20px);
       color: var(--muted);
-      max-width: 540px;
-      margin: 0 auto 40px;
+      max-width: 500px;
+      margin: 0 0 36px;
     }
 
     .hero-actions {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 70px;
+      margin-bottom: 0;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (max-width: 880px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-text { text-align: center; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
     }
 
     .btn-primary {
@@ -163,10 +186,10 @@
       font-size: 16px;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 8px 24px rgba(108,99,255,0.35);
+      box-shadow: 0 8px 24px rgba(46,111,168,0.35);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(108,99,255,0.45); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(46,111,168,0.45); }
 
     .btn-secondary {
       display: inline-flex;
@@ -276,7 +299,7 @@
     .phone-center {
       transform: translateY(-30px) scale(1.05);
       z-index: 2;
-      box-shadow: 0 40px 100px rgba(108,99,255,0.5);
+      box-shadow: 0 40px 100px rgba(46,111,168,0.5);
     }
 
     .phone-side {
@@ -288,8 +311,6 @@
     .stats {
       background: var(--white);
       padding: 60px 5%;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
     }
 
     .stats-inner {
@@ -304,7 +325,7 @@
     .stat-num {
       font-size: clamp(32px, 4vw, 48px);
       font-weight: 900;
-      background: linear-gradient(135deg, var(--primary), #A78BFA);
+      background: linear-gradient(135deg, var(--primary), #4789BC);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -369,7 +390,7 @@
       padding: 32px 28px;
       transition: box-shadow 0.2s, transform 0.2s;
     }
-    .pillar:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(108,99,255,0.12); }
+    .pillar:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(46,111,168,0.12); }
 
     .pillar-icon {
       width: 52px;
@@ -409,7 +430,7 @@
     .feature-row.reverse > * { direction: ltr; }
 
     .feature-visual {
-      background: linear-gradient(135deg, #F5F3FF, #EEF0FF);
+      background: linear-gradient(135deg, #EEF5FB, #E6F1F9);
       border-radius: var(--radius);
       height: 380px;
       display: flex;
@@ -425,7 +446,7 @@
       border-radius: 16px;
       padding: 20px;
       width: 80%;
-      box-shadow: 0 12px 40px rgba(108,99,255,0.15);
+      box-shadow: 0 12px 40px rgba(46,111,168,0.15);
     }
 
     .feature-visual-title {
@@ -469,7 +490,7 @@
     .chart-bar {
       flex: 1;
       border-radius: 6px 6px 0 0;
-      background: linear-gradient(180deg, var(--primary), #A78BFA);
+      background: linear-gradient(180deg, var(--primary), #4789BC);
       opacity: 0.8;
     }
 
@@ -491,7 +512,7 @@
     .mini-amt { font-size: 13px; font-weight: 700; }
 
     .widget-preview {
-      background: linear-gradient(135deg, var(--primary), #A78BFA);
+      background: linear-gradient(135deg, var(--primary), #4789BC);
       border-radius: 20px;
       padding: 18px;
       color: #fff;
@@ -558,7 +579,7 @@
       padding: 28px;
       transition: box-shadow 0.2s;
     }
-    .testimonial:hover { box-shadow: 0 8px 32px rgba(108,99,255,0.1); }
+    .testimonial:hover { box-shadow: 0 8px 32px rgba(46,111,168,0.1); }
 
     .stars { color: #FFC107; font-size: 14px; margin-bottom: 14px; letter-spacing: 1px; }
 
@@ -591,7 +612,7 @@
     /* ── CTA BANNER ── */
     .cta-banner {
       padding: 100px 5%;
-      background: linear-gradient(135deg, var(--primary) 0%, #A78BFA 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, #4789BC 100%);
       text-align: center;
       color: #fff;
     }
@@ -646,7 +667,7 @@
     .footer-brand-icon {
       width: 44px;
       height: 44px;
-      background: linear-gradient(135deg, var(--primary), #A78BFA);
+      background: linear-gradient(135deg, var(--primary), #4789BC);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -740,40 +761,29 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-badge">⭐ Rated 4.5 on the App Store</div>
-    <h1>Never Miss a<br/><span>Bill Again</span></h1>
-    <p class="hero-sub">Track bills, set smart reminders, and stay on top of every payment — all in one beautifully simple app.</p>
-    <div class="hero-actions">
-      <a class="btn-primary" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        Download Free
-      </a>
-      <a class="btn-secondary" href="#features">See Features →</a>
-    </div>
-
-    <!-- Phone mockups -->
-    <div class="hero-phones">
-      <div class="phone phone-side">
-        <div class="phone-notch"></div>
-        <div class="phone-screen">
-          <div class="phone-header">Calendar</div>
-          <div class="calendar-grid">
-            <div class="cal-day">M</div><div class="cal-day">T</div><div class="cal-day">W</div><div class="cal-day">T</div><div class="cal-day">F</div><div class="cal-day">S</div><div class="cal-day">S</div>
-            <div class="cal-day"></div><div class="cal-day"></div><div class="cal-day has-bill">1</div><div class="cal-day">2</div><div class="cal-day">3</div><div class="cal-day has-bill">4</div><div class="cal-day">5</div>
-            <div class="cal-day today">6</div><div class="cal-day">7</div><div class="cal-day">8</div><div class="cal-day has-bill">9</div><div class="cal-day">10</div><div class="cal-day">11</div><div class="cal-day">12</div>
-            <div class="cal-day paid">13</div><div class="cal-day">14</div><div class="cal-day">15</div><div class="cal-day has-bill">16</div><div class="cal-day">17</div><div class="cal-day">18</div><div class="cal-day">19</div>
-          </div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">⭐ Rated 4.5 on the App Store</div>
+        <h1>Never miss a bill<br/><span>again.</span></h1>
+        <p class="hero-sub">Manage all your bills in one place, stay on top of due dates, and keep your financial life running smoothly.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download Free
+          </a>
+          <a class="btn-secondary" href="#features">See Features →</a>
         </div>
       </div>
 
-      <div class="phone phone-center">
+      <div class="hero-visual">
+        <div class="phone phone-center">
         <div class="phone-notch"></div>
         <div class="phone-screen">
           <div class="phone-header">Bills Due This Month</div>
           <div class="phone-amount">$1,240</div>
           <div class="phone-bill-row">
             <div class="phone-bill-left">
-              <div class="phone-bill-icon" style="background:#EEF0FF">🏠</div>
+              <div class="phone-bill-icon" style="background:#E6F1F9">🏠</div>
               <div>
                 <div class="phone-bill-name">Rent</div>
                 <div class="phone-bill-date">Due Jun 1</div>
@@ -823,21 +833,6 @@
           </div>
         </div>
       </div>
-
-      <div class="phone phone-side">
-        <div class="phone-notch"></div>
-        <div class="phone-screen">
-          <div class="phone-header">Monthly Report</div>
-          <div class="phone-amount" style="font-size:20px">June Spending</div>
-          <div class="chart-bar-row">
-            <div class="chart-bar" style="height:40%"></div>
-            <div class="chart-bar" style="height:65%"></div>
-            <div class="chart-bar" style="height:50%"></div>
-            <div class="chart-bar" style="height:90%"></div>
-            <div class="chart-bar" style="height:70%"></div>
-            <div class="chart-bar" style="height:55%"></div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -869,7 +864,7 @@
     </div>
     <div class="pillars">
       <div class="pillar">
-        <div class="pillar-icon" style="background:#EEF0FF">🔔</div>
+        <div class="pillar-icon" style="background:#E6F1F9">🔔</div>
         <h3>Smart Reminders</h3>
         <p>Get notified before bills are due — 1, 3, or 7 days in advance. Never pay a late fee again.</p>
       </div>
@@ -889,7 +884,7 @@
         <p>Your bills stay in sync across all your Apple devices — iPhone, iPad, Mac, and Apple Watch.</p>
       </div>
       <div class="pillar">
-        <div class="pillar-icon" style="background:#F5F3FF">📊</div>
+        <div class="pillar-icon" style="background:#EEF5FB">📊</div>
         <h3>Spending Reports</h3>
         <p>Visual charts and category breakdowns help you understand exactly where your money is going each month.</p>
       </div>
@@ -971,7 +966,7 @@
               <div class="chart-bar" style="height:70%;background:linear-gradient(180deg,#34C759,#86EFAC)"></div>
               <div class="chart-bar" style="height:55%;background:linear-gradient(180deg,#34C759,#86EFAC)"></div>
               <div class="chart-bar" style="height:90%;background:linear-gradient(180deg,#34C759,#86EFAC)"></div>
-              <div class="chart-bar" style="height:65%;background:linear-gradient(180deg,#6C63FF,#A78BFA)"></div>
+              <div class="chart-bar" style="height:65%;background:linear-gradient(180deg,#2E6FA8,#4789BC)"></div>
               <div class="chart-bar" style="height:50%;opacity:0.3;background:linear-gradient(180deg,#34C759,#86EFAC)"></div>
             </div>
             <div style="display:flex;justify-content:space-around;font-size:10px;color:var(--muted);margin-top:4px;">
@@ -993,7 +988,7 @@
 
       <!-- Feature 3: Widgets -->
       <div class="feature-row">
-        <div class="feature-visual" style="background:linear-gradient(135deg,#F5F3FF,#EDE9FE)">
+        <div class="feature-visual" style="background:linear-gradient(135deg,#EEF5FB,#E1EDF6)">
           <div class="feature-visual-inner">
             <div class="feature-visual-title">Home Screen Widget</div>
             <div class="widget-preview">
@@ -1075,7 +1070,7 @@
         <div class="stars">★★★★★</div>
         <p class="testimonial-text">"Finally an app that actually reminds me about bills before they're due. I haven't paid a late fee since I started using RemindPay."</p>
         <div class="testimonial-author">
-          <div class="author-avatar" style="background:linear-gradient(135deg,#6C63FF,#A78BFA)">S</div>
+          <div class="author-avatar" style="background:linear-gradient(135deg,#2E6FA8,#4789BC)">S</div>
           <div>
             <div class="author-name">Sarah M.</div>
             <div class="author-sub">App Store Review</div>
@@ -1145,7 +1140,7 @@
     <h2>Start tracking your bills today</h2>
     <p>Free to download. Works on iPhone, iPad, Apple Watch, and Mac.</p>
     <a class="btn-white" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170" target="_blank" rel="noopener">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="#6C63FF"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#2E6FA8"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
       Download on the App Store
     </a>
     <p class="cta-note">Available on iOS 16+ · Free download</p>
