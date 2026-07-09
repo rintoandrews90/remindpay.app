@@ -117,7 +117,26 @@
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.6; }
+
+    /* Scroll-reveal initial state — only applied when JS is available (see head script),
+       so no-JS users always see content. Motion animates these into view. */
+    .js [data-animate] { opacity: 0; transform: translateY(24px); will-change: opacity, transform; }
+    /* Failsafe: if Motion can't load (CDN blocked) or motion is reduced, show everything. */
+    .js.no-motion [data-animate] { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .js [data-animate] { opacity: 1; transform: none; }
+    }
   </style>
+  <script>
+    // Mark JS available before first paint so [data-animate] can be hidden without a flash.
+    document.documentElement.classList.add('js');
+    // If Motion never initialises, reveal content anyway.
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        if (!window.__motionReady) document.documentElement.classList.add('no-motion');
+      }, 1500);
+    });
+  </script>
 </head>
 <body class="text-brandtext bg-white">
 
@@ -131,7 +150,7 @@
 
   <!-- HERO -->
   <section class="relative overflow-hidden pt-10 pb-2 px-[5%] bg-gradient-to-b from-[#EEF5FB] to-white">
-    <div class="max-w-[1200px] mx-auto grid grid-cols-1 md880:grid-cols-[1.05fr_1fr] gap-12 md880:gap-[60px] items-center">
+    <div data-animate class="max-w-[1200px] mx-auto grid grid-cols-1 md880:grid-cols-[1.05fr_1fr] gap-12 md880:gap-[60px] items-center">
       <div class="text-center md880:text-left">
         <div class="inline-flex items-center gap-1.5 bg-primary-light text-primary text-[13px] font-semibold py-1.5 px-3.5 rounded-full mb-6 border border-primary/30">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="#FF9500" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -164,7 +183,7 @@
 
   <!-- STATS -->
   <section class="bg-white py-4 px-[5%]">
-    <div class="max-w-[900px] mx-auto grid grid-cols-1 xs520:grid-cols-2 md:grid-cols-3 gap-6 text-center xs520:[&>div:last-child]:col-span-2 md:[&>div:last-child]:col-span-1">
+    <div data-animate class="max-w-[900px] mx-auto grid grid-cols-1 xs520:grid-cols-2 md:grid-cols-3 gap-6 text-center xs520:[&>div:last-child]:col-span-2 md:[&>div:last-child]:col-span-1">
       <div>
         <div class="text-[clamp(32px,4vw,48px)] font-black bg-gradient-to-br from-primary to-[#4789BC] bg-clip-text text-transparent leading-none mb-1.5">7K+</div>
         <div class="text-sm text-brandmuted font-medium">Downloads</div>
@@ -182,12 +201,12 @@
 
   <!-- FEATURE PILLARS -->
   <section class="pt-2 pb-[100px] px-[5%]" id="features">
-    <div class="text-center max-w-[1100px] mx-auto">
+    <div data-animate class="text-center max-w-[1100px] mx-auto">
       <span class="inline-block text-xs font-bold uppercase tracking-[1.5px] text-primary bg-primary-light py-[5px] px-3 rounded-full mb-4 border border-primary/30">Features</span>
       <h2 class="text-[clamp(28px,4vw,44px)] font-extrabold tracking-[-1px] leading-[1.15] mb-3.5 bg-gradient-to-r from-primary-dark via-primary to-[#4789BC] bg-clip-text text-transparent pb-[0.06em]">Everything you need to stay on top of bills</h2>
       <p class="text-[17px] text-brandmuted max-w-[560px] mx-auto mb-14">Powerful tools wrapped in a clean, intuitive interface that gets out of your way.</p>
     </div>
-    <div class="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-6 max-w-[1100px] mx-auto">
+    <div data-animate class="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-6 max-w-[1100px] mx-auto">
       <div class="bg-white border border-brandborder rounded-[20px] py-8 px-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-pillar-hover">
         <div class="w-[52px] h-[52px] rounded-full flex items-center justify-center mb-5 bg-[#E6F1F9] border border-primary/40">
           <span class="material-symbols-rounded text-[24px] text-primary">notifications</span>
@@ -238,7 +257,7 @@
     <div class="max-w-[1100px] mx-auto">
 
       <!-- Feature 1: Bills & Notifications -->
-      <div id="bills" class="grid grid-cols-1 md:grid-cols-2 gap-9 md:gap-[60px] items-center mb-20 last:mb-0 scroll-mt-20">
+      <div id="bills" data-animate class="grid grid-cols-1 md:grid-cols-2 gap-9 md:gap-[60px] items-center mb-20 last:mb-0 scroll-mt-20">
         <div class="bg-gradient-to-br from-[#EEF5FB] to-[#E6F1F9] rounded-[20px] h-[280px] md:h-[500px] flex items-center justify-center relative overflow-hidden">
           <img src="images/phone.png" alt="RemindPay app screen" class="h-[120%] w-auto block drop-shadow-[0_30px_60px_rgba(46,111,168,0.35)]" />
         </div>
@@ -268,7 +287,7 @@
       </div>
 
       <!-- Feature 2: Warranty Cards -->
-      <div id="warranty" class="grid grid-cols-1 md:grid-cols-2 gap-9 md:gap-[60px] items-center mb-20 last:mb-0 scroll-mt-20">
+      <div id="warranty" data-animate class="grid grid-cols-1 md:grid-cols-2 gap-9 md:gap-[60px] items-center mb-20 last:mb-0 scroll-mt-20">
         <div class="bg-gradient-to-br from-[#FFF1F2] to-[#FFE4E6] rounded-[20px] h-[280px] md:h-[500px] flex items-center justify-center relative overflow-hidden md:order-2">
           <img src="images/warrenty.png" alt="RemindPay warranty cards" class="h-[120%] w-auto block drop-shadow-[0_45px_90px_rgba(225,29,72,0.4)]" />
         </div>
@@ -294,7 +313,7 @@
       </div>
 
       <!-- Feature 3: Reports -->
-      <div id="reports" class="grid grid-cols-1 md:grid-cols-2 gap-9 md:gap-[60px] items-center mb-20 last:mb-0 scroll-mt-20">
+      <div id="reports" data-animate class="grid grid-cols-1 md:grid-cols-2 gap-9 md:gap-[60px] items-center mb-20 last:mb-0 scroll-mt-20">
         <div class="bg-gradient-to-br from-[#F0FDF4] to-[#DCFCE7] rounded-[20px] h-[280px] md:h-[500px] flex items-center justify-center relative overflow-hidden">
           <img src="images/charts.png" alt="RemindPay spending charts" class="h-[120%] w-auto block drop-shadow-[0_45px_90px_rgba(52,199,89,0.55)]" />
         </div>
@@ -316,7 +335,7 @@
       </div>
 
       <!-- Feature 4: Widgets -->
-      <div id="widgets" class="grid grid-cols-1 md:grid-cols-2 gap-9 md:gap-[60px] items-center mb-20 last:mb-0 scroll-mt-20">
+      <div id="widgets" data-animate class="grid grid-cols-1 md:grid-cols-2 gap-9 md:gap-[60px] items-center mb-20 last:mb-0 scroll-mt-20">
         <div class="bg-gradient-to-br from-[#EEF5FB] to-[#E1EDF6] rounded-[20px] h-[280px] md:h-[500px] flex items-center justify-center relative overflow-hidden md:order-2">
           <img src="images/widgets.png" alt="RemindPay home screen widgets" class="h-[120%] w-auto block drop-shadow-[0_45px_90px_rgba(46,111,168,0.55)]" />
         </div>
@@ -342,7 +361,7 @@
       </div>
 
       <!-- Feature 5: Integrations (Apple Watch + Siri) -->
-      <div id="integrations" class="grid grid-cols-1 md:grid-cols-2 gap-9 md:gap-[60px] items-center mb-20 last:mb-0 scroll-mt-20">
+      <div id="integrations" data-animate class="grid grid-cols-1 md:grid-cols-2 gap-9 md:gap-[60px] items-center mb-20 last:mb-0 scroll-mt-20">
         <div class="bg-gradient-to-br from-[#FFF7ED] to-[#FFEDD5] rounded-[20px] h-[280px] md:h-[500px] flex items-center justify-center relative overflow-hidden">
           <img src="images/shortcuts.png" alt="RemindPay Siri Shortcuts and Apple integrations" class="h-[120%] w-auto block drop-shadow-[0_45px_90px_rgba(255,149,0,0.45)]" />
         </div>
@@ -375,7 +394,7 @@
     <span class="inline-block text-xs font-bold uppercase tracking-[1.5px] text-primary bg-primary-light py-[5px] px-3 rounded-full mb-4 border border-primary/30">Reviews</span>
     <h2 class="text-[clamp(28px,4vw,44px)] font-extrabold tracking-[-1px] leading-[1.15] mb-3.5 bg-gradient-to-r from-primary-dark via-primary to-[#4789BC] bg-clip-text text-transparent pb-[0.06em]">Loved by users worldwide</h2>
     <p class="text-[17px] text-brandmuted max-w-[560px] mx-auto mb-14">Don't take our word for it — here's what real users say.</p>
-    <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-5 max-w-[1100px] mx-auto">
+    <div data-animate class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-5 max-w-[1100px] mx-auto">
       <div class="bg-white border border-brandborder rounded-[20px] p-7 transition-shadow duration-200 hover:shadow-testimonial-hover text-left">
         <div class="text-[#FFC107] text-lg mb-3.5 tracking-[1px]">★★★★★</div>
         <p class="text-[15px] text-brandtext leading-[1.7] mb-[18px] italic">"This is exactly what I was looking for to keep track of my bills."</p>
@@ -428,7 +447,7 @@
   </section>
 
   <!-- CTA BANNER -->
-  <section class="py-[100px] px-[5%] bg-gradient-to-br from-primary to-[#4789BC] text-center text-white" id="download">
+  <section data-animate class="py-[100px] px-[5%] bg-gradient-to-br from-primary to-[#4789BC] text-center text-white" id="download">
     <h2 class="text-[clamp(28px,4vw,52px)] font-black tracking-[-1.5px] mb-4">Start tracking your bills today</h2>
     <p class="text-lg opacity-85 mb-10">Free trial · one-time payment to unlock — no subscriptions. Works on iPhone, iPad, Apple Watch, and Mac.</p>
     <a class="inline-flex items-center gap-2 bg-white text-primary py-4 px-9 rounded-full text-base font-bold no-underline shadow-btn-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-btn-white-hover" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170" target="_blank" rel="noopener">
@@ -481,6 +500,21 @@
       <span>Made with ♥ for Apple users everywhere</span>
     </div>
   </footer>
+
+  <!-- Motion (framework-free) via CDN — scroll-reveal animations -->
+  <script type="module">
+    import { inView, animate } from "https://cdn.jsdelivr.net/npm/motion@12.42.2/+esm";
+    window.__motionReady = true;
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      inView("[data-animate]", (element) => {
+        animate(
+          element,
+          { opacity: [0, 1], transform: ["translateY(24px)", "translateY(0)"] },
+          { duration: 0.6, easing: [0.16, 1, 0.3, 1] }
+        );
+      }, { amount: 0.15 });
+    }
+  </script>
 
 </body>
 </html>
