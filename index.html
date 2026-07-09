@@ -145,12 +145,7 @@
       transform: translateY(-3px);
     }
 
-    /* Icon glow variants — matched to design-token accent families */
-    .icon-glow-blue   { box-shadow: 0 0 18px rgba(57,111,192,0.22); }
-    .icon-glow-red    { box-shadow: 0 0 18px rgba(229,72,77,0.18); }
-    .icon-glow-teal   { box-shadow: 0 0 18px rgba(71,154,154,0.18); }
-    .icon-glow-orange { box-shadow: 0 0 18px rgba(247,93,18,0.18); }
-    .icon-glow-gold   { box-shadow: 0 0 18px rgba(246,189,5,0.22); }
+    .icon-glow-blue, .icon-glow-red, .icon-glow-teal, .icon-glow-orange, .icon-glow-gold { box-shadow: none; }
 
     /* Gradient avatar — primary.500 → primary.400 */
     .grad-avatar { background: linear-gradient(135deg, #396FC0, #5E8BCF); }
@@ -383,7 +378,9 @@
         </div>
         <h3 class="text-xl font-extrabold tracking-[-0.4px] mb-2 text-brandtext">Across your Apple ecosystem</h3>
         <p class="text-[15px] text-brandmuted leading-[1.75]">Siri Shortcuts, an Apple Watch app, and tap-to-pay automations — RemindPay integrates deeply with iOS.</p>
-        <img src="images/shortcuts.png" alt="RemindPay Siri Shortcuts and Apple integrations" class="mt-6 mx-auto w-auto max-h-[190px] block drop-shadow-[0_20px_44px_rgba(247,93,18,0.28)]" />
+        <div class="-mx-8 -mb-8 mt-6 h-[360px] md:h-[410px] overflow-hidden flex items-start justify-center">
+          <img src="images/shortcuts.png" alt="RemindPay Siri Shortcuts and Apple integrations" class="h-full w-auto block drop-shadow-[0_20px_44px_rgba(247,93,18,0.28)]" />
+        </div>
       </article>
 
     </div>
