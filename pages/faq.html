@@ -25,9 +25,20 @@
   <meta property="og:description" content="Everything you need to know about tracking bills, warranties, and reminders with RemindPay." />
   <meta property="og:url" content="https://remindpay.app/pages/faq.html" />
   <meta property="og:image" content="https://remindpay.app/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RemindPay FAQ – Frequently Asked Questions" />
+  <meta name="twitter:description" content="Everything you need to know about tracking bills, warranties, and reminders with RemindPay." />
+  <meta name="twitter:image" content="https://remindpay.app/images/og-image.png" />
 
   <!-- Apple-specific -->
   <meta name="apple-itunes-app" content="app-id=1609633170" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="RemindPay" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,6 +56,7 @@
             brandmuted: '#6B7280',
             brandborder: '#E5E7EB',
             brandbg: '#F9FAFB',
+            surface: '#F7F7F8',
             success: '#34C759',
           },
           fontFamily: {
@@ -55,12 +67,11 @@
             md880: '880px',
           },
           boxShadow: {
-            'primary-md': '0 8px 24px rgba(46,111,168,0.35)',
-            'primary-lg': '0 12px 32px rgba(46,111,168,0.45)',
-            'primary-soft': '0 12px 40px rgba(46,111,168,0.15)',
+            'primary-md': '0 8px 24px rgba(46,111,168,0.30)',
+            'primary-lg': '0 14px 34px rgba(46,111,168,0.42)',
+            'card-hover': '0 20px 50px rgba(26,26,46,0.10)',
             'pillar-hover': '0 16px 48px rgba(46,111,168,0.12)',
-            'testimonial-hover': '0 8px 32px rgba(46,111,168,0.1)',
-            'btn-white': '0 8px 30px rgba(0,0,0,0.2)',
+            'btn-white': '0 8px 30px rgba(0,0,0,0.18)',
             'btn-white-hover': '0 14px 40px rgba(0,0,0,0.25)',
           },
         },
@@ -77,11 +88,14 @@
 <body class="text-brandtext bg-white">
 
   <!-- NAV -->
-  <nav class="sticky top-0 z-[100] bg-white/90 backdrop-blur-xl h-[68px] flex items-center justify-between px-[5%]">
-    <a class="flex items-center gap-2.5 no-underline" href="/">
-      <img class="w-[38px] h-[38px] object-cover block" src="../images/icon.png" alt="RemindPay" />
-      <span class="text-[17px] font-bold text-brandtext">RemindPay</span>
-    </a>
+  <nav class="sticky top-0 z-[100] bg-white/70 backdrop-blur-xl border-b border-black/[0.05]">
+    <div class="max-w-6xl mx-auto h-16 px-[5%] md:px-6 flex items-center justify-between">
+      <a class="flex items-center gap-2.5 no-underline" href="/">
+        <img class="w-9 h-9 object-cover block" src="../images/icon.png" alt="RemindPay" />
+        <span class="text-[17px] font-bold text-brandtext">RemindPay</span>
+      </a>
+      <a class="inline-flex items-center bg-primary text-white text-sm font-semibold px-4 py-2 rounded-full no-underline shadow-primary-md transition-all duration-200 hover:bg-primary-dark hover:-translate-y-0.5" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170">Download</a>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -276,6 +290,7 @@
       <a class="inline-flex items-center gap-2 bg-transparent text-white py-[15px] px-8 rounded-full text-base font-bold no-underline border-[1.5px] border-white/50 transition-all duration-200 hover:border-white hover:-translate-y-0.5" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170" target="_blank" rel="noopener">Get the App</a>
     </div>
   </section>
+
 
 </body>
 </html>
