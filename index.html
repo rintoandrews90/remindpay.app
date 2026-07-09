@@ -141,6 +141,11 @@
     .marquee-track { animation: marquee var(--speed, 46s) linear infinite; }
     .marquee-group:hover .marquee-track { animation-play-state: paused; }
     @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+    /* ---- Gentle floating hero device ---- */
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+    .animate-float { animation: floaty 5.5s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { .animate-float { animation: none; } }
   </style>
   <script>
     // Mark JS available before first paint so [data-animate] can hide without a flash.
@@ -198,7 +203,7 @@
     </div>
 
     <div data-animate data-delay="0.12" class="relative mt-14 flex justify-center">
-      <img class="w-auto max-h-[600px] block drop-shadow-[0_40px_80px_rgba(46,111,168,0.30)]" src="images/phone.png" alt="RemindPay app screen" />
+      <img class="animate-float w-auto max-h-[760px] md:max-h-[860px] block drop-shadow-[0_48px_90px_rgba(46,111,168,0.32)]" src="images/phone.png" alt="RemindPay app screen" />
     </div>
   </section>
 
