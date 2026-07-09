@@ -1,0 +1,259 @@
+{
+  "meta": {
+    "name": "RemindPay Design System",
+    "version": "1.0.0",
+    "source": "Extracted from brand color palette reference image"
+  },
+  "color": {
+    "primary": {
+      "50": "#F9FAFC",
+      "100": "#F0F4FA",
+      "200": "#D8E3F3",
+      "300": "#89AADC",
+      "400": "#5E8BCF",
+      "500": "#396FC0",
+      "600": "#2B589C",
+      "700": "#204275",
+      "800": "#172E52",
+      "900": "#0E1D33"
+    },
+    "secondary": {
+      "orange": {
+        "50": "#FEFAF8",
+        "100": "#FEF5F1",
+        "200": "#FBDACB",
+        "300": "#F9BFA4",
+        "400": "#F7A47D",
+        "500": "#F58A56",
+        "600": "#F75D12",
+        "700": "#C04307",
+        "800": "#862F05",
+        "900": "#531D03"
+      },
+      "teal": {
+        "50": "#F9FCFC",
+        "100": "#F2F8F8",
+        "200": "#C6E2E2",
+        "300": "#99CCCC",
+        "400": "#6BB8B8",
+        "500": "#479A9A",
+        "600": "#377D7D",
+        "700": "#295E5E",
+        "800": "#1D4242",
+        "900": "#122929"
+      },
+      "gold": {
+        "50": "#FEFCF7",
+        "100": "#FFFAEB",
+        "200": "#FFEBB0",
+        "300": "#FEDC75",
+        "400": "#FCCE3B",
+        "500": "#F6BD05",
+        "600": "#C99900",
+        "700": "#977300",
+        "800": "#695000",
+        "900": "#413200"
+      },
+      "red": {
+        "50": "#FEF9F9",
+        "100": "#FDF0F0",
+        "200": "#F7C6C6",
+        "300": "#F19C9D",
+        "400": "#EB7275",
+        "500": "#E5484D",
+        "600": "#D7191F",
+        "700": "#A21318",
+        "800": "#710D11",
+        "900": "#46080A",
+        "note": "Added to cover the error/open status color seen in the component library; not part of the original extracted palette."
+      }
+    },
+    "neutral": {
+      "50": "#FFFFFF",
+      "100": "#F6F7F8",
+      "200": "#EBEDEF",
+      "300": "#D2D6DB",
+      "400": "#AAB1BB",
+      "500": "#7A8494",
+      "600": "#5C6678",
+      "700": "#455163",
+      "800": "#2E3644",
+      "900": "#1B2027"
+    },
+    "semantic": {
+      "success": {
+        "default": "#479A9A",
+        "subtle": "#F2F8F8",
+        "strong": "#295E5E",
+        "usage": "Paid status"
+      },
+      "warning": {
+        "default": "#F58A56",
+        "subtle": "#FEF5F1",
+        "strong": "#C04307",
+        "usage": "Due status"
+      },
+      "danger": {
+        "default": "#E5484D",
+        "subtle": "#FDF0F0",
+        "strong": "#A21318",
+        "usage": "Open status"
+      },
+      "info": {
+        "default": "#396FC0",
+        "subtle": "#F0F4FA",
+        "strong": "#204275"
+      },
+      "accent": {
+        "default": "#F6BD05",
+        "subtle": "#FFFAEB",
+        "strong": "#977300",
+        "usage": "Highlight/emphasis, not tied to a status"
+      }
+    },
+    "text": {
+      "primary": "#1B2027",
+      "secondary": "#5C6678",
+      "muted": "#7A8494",
+      "inverse": "#FFFFFF",
+      "link": "#396FC0"
+    },
+    "background": {
+      "base": "#FFFFFF",
+      "subtle": "#F6F7F8",
+      "surface": "#FFFFFF",
+      "inverse": "#1B2027"
+    },
+    "border": {
+      "default": "#D2D6DB",
+      "subtle": "#EBEDEF",
+      "strong": "#AAB1BB"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "display": "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+      "text": "'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+      "mono": "'SF Mono', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace",
+      "note": "Use SF Pro Display for text 20px and larger, SF Pro Text for anything smaller than 20px."
+    },
+    "fontWeight": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "lineHeight": {
+      "default": 1.5,
+      "note": "All text styles use 150% line height."
+    },
+    "textStyles": {
+      "largeTitle": {"fontSize": "34px", "lineHeight": "150%", "family": "display", "weight": "bold"},
+      "title1":     {"fontSize": "28px", "lineHeight": "150%", "family": "display", "weight": "bold"},
+      "title2":     {"fontSize": "22px", "lineHeight": "150%", "family": "display", "weight": "semibold"},
+      "title3":     {"fontSize": "20px", "lineHeight": "150%", "family": "display", "weight": "semibold"},
+      "headline":   {"fontSize": "17px", "lineHeight": "150%", "family": "text", "weight": "semibold"},
+      "body":       {"fontSize": "17px", "lineHeight": "150%", "family": "text", "weight": "regular"},
+      "callout":    {"fontSize": "16px", "lineHeight": "150%", "family": "text", "weight": "regular"},
+      "subheadline1": {"fontSize": "15px", "lineHeight": "150%", "family": "text", "weight": "medium"},
+      "footnote1":  {"fontSize": "13px", "lineHeight": "150%", "family": "text", "weight": "regular"}
+    },
+    "fontSize": {
+      "xs": "13px",
+      "sm": "15px",
+      "base": "17px",
+      "lg": "17px",
+      "xl": "20px",
+      "2xl": "22px",
+      "3xl": "28px",
+      "4xl": "34px"
+    }
+  },
+  "spacing": {
+    "0": "0px",
+    "1": "4px",
+    "2": "8px",
+    "3": "12px",
+    "4": "16px",
+    "5": "20px",
+    "6": "24px",
+    "8": "32px",
+    "10": "40px",
+    "12": "48px",
+    "16": "64px",
+    "20": "80px",
+    "24": "96px"
+  },
+  "radius": {
+    "sm": "4px",
+    "md": "8px",
+    "lg": "12px",
+    "xl": "16px",
+    "full": "9999px"
+  },
+  "shadow": {
+    "sm": "0 1px 2px rgba(27,32,39,0.06)",
+    "md": "0 4px 8px rgba(27,32,39,0.08)",
+    "lg": "0 8px 24px rgba(27,32,39,0.12)",
+    "xl": "0 16px 40px rgba(27,32,39,0.16)"
+  },
+  "components": {
+    "capsuleButton": {
+      "shape": "radius.full",
+      "padding": "10px 24px",
+      "fontWeight": "bold",
+      "fontSize": "16px",
+      "states": {
+        "selected": {"background": "#396FC0", "text": "#FFFFFF"},
+        "default": {"background": "#AAB1BB", "text": "#1B2027"}
+      }
+    },
+    "iconButton": {
+      "shape": "circle",
+      "size": "48px",
+      "background": "#FFFFFF",
+      "iconColor": "#396FC0",
+      "shadow": "shadow.sm",
+      "container": {"background": "#F6F7F8", "radius": "radius.lg"}
+    },
+    "quickActionButton": {
+      "shape": "circle",
+      "size": "48px",
+      "background": "#FFFFFF",
+      "iconColor": "#396FC0",
+      "border": "1px solid #EBEDEF",
+      "container": {"background": "#F6F7F8", "radius": "radius.lg"}
+    },
+    "primaryText": {
+      "fontWeight": "bold",
+      "fontSize": "16px",
+      "color": "#1B2027"
+    },
+    "statusLabel": {
+      "shape": "radius.md",
+      "border": "1px solid",
+      "fontWeight": "bold",
+      "fontSize": "14px",
+      "padding": "6px 14px",
+      "variants": {
+        "paid":  {"background": "#F2F8F8", "border": "#479A9A", "text": "#295E5E"},
+        "due":   {"background": "#FEF5F1", "border": "#F58A56", "text": "#C04307"},
+        "open":  {"background": "#FDF0F0", "border": "#E5484D", "text": "#A21318"}
+      }
+    },
+    "dateSectionHeader": {
+      "fontWeight": "bold",
+      "fontSize": "18px",
+      "color": "#1B2027"
+    },
+    "formTextField": {
+      "background": "#FFFFFF",
+      "border": "1px solid #D2D6DB",
+      "radius": "radius.lg",
+      "padding": "14px 16px",
+      "iconColor": "#5E8BCF",
+      "textColor": "#1B2027",
+      "placeholderColor": "#7A8494"
+    }
+  }
+}

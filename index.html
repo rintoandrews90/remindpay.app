@@ -18,7 +18,7 @@
   <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
   <link rel="manifest" href="/manifest.json" />
-  <meta name="theme-color" content="#2E6FA8" />
+  <meta name="theme-color" content="#396FC0" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -72,21 +72,24 @@
       theme: {
         extend: {
           colors: {
-            primary: { DEFAULT: '#2E6FA8', dark: '#1F5683', light: '#DCE8F2' },
-            brandtext: '#1A1A2E',
-            brandmuted: '#6B7280',
-            brandborder: '#E5E7EB',
-            brandbg: '#F9FAFB',
-            surface: '#F7F7F8',
-            success: '#34C759',
+            /* design-tokens.json: color.primary.500 / .600 / .200 */
+            primary: { DEFAULT: '#396FC0', dark: '#2B589C', light: '#D8E3F3' },
+            /* color.text.primary / .secondary / color.border.default / neutral.100 */
+            brandtext:  '#1B2027',
+            brandmuted: '#5C6678',
+            brandborder:'#D2D6DB',
+            brandbg:    '#F6F7F8',
+            surface:    '#F6F7F8',
+            /* color.semantic.success (teal) */
+            success:    '#479A9A',
           },
           fontFamily: { sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'] },
           screens: { xs520: '520px', md880: '880px' },
           boxShadow: {
-            'primary-md': '0 8px 24px rgba(46,111,168,0.30)',
-            'primary-lg': '0 14px 34px rgba(46,111,168,0.42)',
-            'card-hover': '0 16px 48px rgba(46,111,168,0.12)',
-            'btn-white': '0 8px 30px rgba(0,0,0,0.18)',
+            'primary-md': '0 8px 24px rgba(57,111,192,0.30)',
+            'primary-lg': '0 14px 34px rgba(57,111,192,0.42)',
+            'card-hover': '0 16px 48px rgba(57,111,192,0.12)',
+            'btn-white':  '0 8px 30px rgba(27,32,39,0.18)',
           },
         },
       },
@@ -119,49 +122,49 @@
     .animate-float { animation: floaty 5.5s ease-in-out infinite; }
     @media (prefers-reduced-motion: reduce) { .animate-float { animation: none; } }
 
-    /* Hero gradient mesh */
+    /* Hero gradient mesh — primary.500 #396FC0, primary.400 #5E8BCF, primary.200 #D8E3F3 */
     .hero-mesh {
       background:
-        radial-gradient(ellipse 900px 700px at 15% 60%, rgba(46,111,168,0.08) 0%, transparent 70%),
-        radial-gradient(ellipse 600px 500px at 88% 10%, rgba(71,137,188,0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 500px 400px at 60% 90%, rgba(220,232,242,0.15) 0%, transparent 60%);
+        radial-gradient(ellipse 900px 700px at 15% 60%, rgba(57,111,192,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 600px 500px at 88% 10%, rgba(94,139,207,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 500px 400px at 60% 90%, rgba(216,227,243,0.18) 0%, transparent 60%);
     }
 
-    /* Premium card: white bg, blue-tinted border, lifts on hover */
+    /* Premium card — white bg, primary-tinted border, lifts on hover */
     .pcard {
       background: #ffffff;
-      border: 1px solid rgba(46,111,168,0.14);
+      border: 1px solid rgba(57,111,192,0.14);
       border-radius: 24px;
-      box-shadow: 0 1px 3px rgba(46,111,168,0.06);
+      box-shadow: 0 1px 3px rgba(57,111,192,0.06);
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
     }
     .pcard:hover {
-      border-color: rgba(46,111,168,0.28);
-      box-shadow: 0 16px 48px rgba(46,111,168,0.12), 0 2px 8px rgba(46,111,168,0.07);
+      border-color: rgba(57,111,192,0.28);
+      box-shadow: 0 16px 48px rgba(57,111,192,0.12), 0 2px 8px rgba(57,111,192,0.07);
       transform: translateY(-3px);
     }
 
-    /* Icon glow variants */
-    .icon-glow-blue   { box-shadow: 0 0 18px rgba(46,111,168,0.22); }
-    .icon-glow-rose   { box-shadow: 0 0 18px rgba(225,29,72,0.18); }
-    .icon-glow-green  { box-shadow: 0 0 18px rgba(22,163,74,0.18); }
-    .icon-glow-orange { box-shadow: 0 0 18px rgba(234,88,12,0.18); }
-    .icon-glow-violet { box-shadow: 0 0 18px rgba(139,92,246,0.18); }
+    /* Icon glow variants — matched to design-token accent families */
+    .icon-glow-blue   { box-shadow: 0 0 18px rgba(57,111,192,0.22); }
+    .icon-glow-red    { box-shadow: 0 0 18px rgba(229,72,77,0.18); }
+    .icon-glow-teal   { box-shadow: 0 0 18px rgba(71,154,154,0.18); }
+    .icon-glow-orange { box-shadow: 0 0 18px rgba(247,93,18,0.18); }
+    .icon-glow-gold   { box-shadow: 0 0 18px rgba(246,189,5,0.22); }
 
-    /* Gradient avatar */
-    .grad-avatar { background: linear-gradient(135deg, #2E6FA8, #4789BC); }
+    /* Gradient avatar — primary.500 → primary.400 */
+    .grad-avatar { background: linear-gradient(135deg, #396FC0, #5E8BCF); }
 
-    /* Badge shimmer */
+    /* Badge shimmer — primary.200 / primary.100 */
     @keyframes badge-shine { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
     .badge-shimmer {
-      background: linear-gradient(90deg, #DCE8F2 0%, #EEF5FB 30%, #fff 50%, #EEF5FB 70%, #DCE8F2 100%);
+      background: linear-gradient(90deg, #D8E3F3 0%, #F0F4FA 30%, #fff 50%, #F0F4FA 70%, #D8E3F3 100%);
       background-size: 200% auto;
       animation: badge-shine 3.5s linear infinite;
     }
 
     /* Stat number soft glow */
-    .stat-num { filter: drop-shadow(0 0 20px rgba(46,111,168,0.25)); }
+    .stat-num { filter: drop-shadow(0 0 20px rgba(57,111,192,0.25)); }
 
     /* CTA noise texture overlay */
     .cta-noise::after {
@@ -174,7 +177,7 @@
       pointer-events: none;
     }
 
-    /* Shine sweep on featured bento card hover */
+    /* Shine sweep on bento card hover */
     .shine-card { overflow: hidden; }
     .shine-card::after {
       content: '';
@@ -210,6 +213,7 @@
       <div class="flex items-center gap-7">
         <a class="hidden md:inline text-[14px] font-medium text-brandmuted no-underline hover:text-brandtext transition-colors" href="#features">Features</a>
         <a class="hidden md:inline text-[14px] font-medium text-brandmuted no-underline hover:text-brandtext transition-colors" href="#reviews">Reviews</a>
+        <!-- primary.500 → primary.600 gradient button -->
         <a class="inline-flex items-center gap-2 bg-gradient-to-br from-primary to-primary-dark text-white text-[14px] font-semibold px-5 py-2.5 rounded-full no-underline shadow-primary-md transition-all duration-200 hover:shadow-primary-lg hover:-translate-y-0.5" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
           Download
@@ -220,20 +224,21 @@
 
   <!-- HERO -->
   <section class="relative overflow-hidden px-[5%] pt-20 pb-8 md:pt-28 hero-mesh">
-    <!-- Decorative glow blobs -->
-    <div aria-hidden="true" class="pointer-events-none absolute -top-32 -left-32 w-[700px] h-[700px] rounded-full -z-10" style="background:radial-gradient(circle,rgba(46,111,168,0.10) 0%,transparent 70%);filter:blur(20px);"></div>
-    <div aria-hidden="true" class="pointer-events-none absolute top-1/3 -right-24 w-[500px] h-[500px] rounded-full -z-10" style="background:radial-gradient(circle,rgba(71,137,188,0.07) 0%,transparent 70%);filter:blur(20px);"></div>
+    <!-- Decorative glow blobs — primary.500 -->
+    <div aria-hidden="true" class="pointer-events-none absolute -top-32 -left-32 w-[700px] h-[700px] rounded-full -z-10" style="background:radial-gradient(circle,rgba(57,111,192,0.09) 0%,transparent 70%);filter:blur(20px);"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute top-1/3 -right-24 w-[500px] h-[500px] rounded-full -z-10" style="background:radial-gradient(circle,rgba(94,139,207,0.07) 0%,transparent 70%);filter:blur(20px);"></div>
 
     <div data-animate class="relative max-w-3xl mx-auto text-center">
-      <!-- Rating badge with shimmer -->
+      <!-- Rating badge — gold star (secondary.gold.500 #F6BD05) -->
       <div class="inline-flex items-center gap-2 badge-shimmer text-primary text-[13px] font-semibold py-1.5 px-4 rounded-full mb-8 border border-primary/25 shadow-sm">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="#FF9500" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#F6BD05" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
         Rated 4.5 on the App Store
       </div>
 
+      <!-- "bill" → orange.600 #F75D12 → orange.500 #F58A56 ; "warranty" → primary.500 → primary.400 -->
       <h1 class="text-[clamp(42px,6vw,70px)] font-black leading-[1.07] tracking-[-2.5px] mb-6 text-brandtext">
-        Track every <span class="bg-gradient-to-br from-[#FF9500] to-[#FFB84D] bg-clip-text text-transparent">bill</span> &amp;
-        <span class="bg-gradient-to-br from-primary to-[#4789BC] bg-clip-text text-transparent">warranty.</span>
+        Track every <span class="bg-gradient-to-br from-[#F75D12] to-[#F58A56] bg-clip-text text-transparent">bill</span> &amp;
+        <span class="bg-gradient-to-br from-primary to-[#5E8BCF] bg-clip-text text-transparent">warranty.</span>
       </h1>
       <p class="text-[clamp(16px,1.6vw,20px)] text-brandmuted max-w-[560px] mx-auto mb-10 leading-relaxed">Manage all your bills and warranty cards in one place — stay on top of due dates, expiry reminders, and keep your financial life running smoothly.</p>
 
@@ -255,43 +260,51 @@
       </div>
     </div>
 
-    <!-- Phone with glow beneath it -->
+    <!-- Phone with glow — primary.500 -->
     <div data-animate data-delay="0.12" class="relative mt-16 flex justify-center">
-      <div aria-hidden="true" class="pointer-events-none absolute bottom-[8%] left-1/2 -translate-x-1/2 w-[380px] h-[160px] rounded-full" style="background:rgba(46,111,168,0.22);filter:blur(72px);"></div>
-      <img class="animate-float w-auto max-h-[760px] md:max-h-[860px] block relative drop-shadow-[0_48px_100px_rgba(46,111,168,0.38)]" src="images/phone.png" alt="RemindPay app screen" />
+      <div aria-hidden="true" class="pointer-events-none absolute bottom-[8%] left-1/2 -translate-x-1/2 w-[380px] h-[160px] rounded-full" style="background:rgba(57,111,192,0.20);filter:blur(72px);"></div>
+      <img class="animate-float w-auto max-h-[760px] md:max-h-[860px] block relative drop-shadow-[0_48px_100px_rgba(57,111,192,0.36)]" src="images/phone.png" alt="RemindPay app screen" />
     </div>
   </section>
 
   <!-- STATS -->
-  <section class="px-[5%] py-14 border-y border-black/[0.05]" style="background:linear-gradient(180deg,#F6F8FB 0%,#ffffff 100%);">
+  <!-- neutral.100 #F6F7F8 → white gradient -->
+  <section class="px-[5%] py-14 border-y border-black/[0.05]" style="background:linear-gradient(180deg,#F6F7F8 0%,#ffffff 100%);">
     <div data-animate class="max-w-3xl mx-auto grid grid-cols-1 xs520:grid-cols-3 gap-8 text-center">
+
+      <!-- Downloads — primary.100 bg, primary.500 icon -->
       <div class="flex flex-col items-center gap-3">
-        <div class="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/15 flex items-center justify-center icon-glow-blue">
-          <span class="material-symbols-rounded text-primary text-[22px]">download</span>
+        <div class="w-12 h-12 rounded-2xl bg-[#F0F4FA] border border-[#396FC0]/15 flex items-center justify-center icon-glow-blue">
+          <span class="material-symbols-rounded text-[#396FC0] text-[22px]">download</span>
         </div>
         <div>
-          <div class="stat-num text-[clamp(32px,4vw,46px)] font-black bg-gradient-to-br from-primary to-[#4789BC] bg-clip-text text-transparent leading-none mb-1.5">7K+</div>
+          <div class="stat-num text-[clamp(32px,4vw,46px)] font-black bg-gradient-to-br from-primary to-[#5E8BCF] bg-clip-text text-transparent leading-none mb-1.5">7K+</div>
           <div class="text-sm text-brandmuted font-medium">Downloads</div>
         </div>
       </div>
+
+      <!-- Rating — gold.100 bg, gold.500 icon (#F6BD05) -->
       <div class="flex flex-col items-center gap-3">
-        <div class="w-12 h-12 rounded-2xl bg-[#FFF7ED] border border-[#FF9500]/20 flex items-center justify-center" style="box-shadow:0 0 18px rgba(255,149,0,0.18);">
-          <span class="material-symbols-rounded text-[#FF9500] text-[22px]">star</span>
+        <div class="w-12 h-12 rounded-2xl bg-[#FFFAEB] border border-[#F6BD05]/25 flex items-center justify-center icon-glow-gold">
+          <span class="material-symbols-rounded text-[#C99900] text-[22px]">star</span>
         </div>
         <div>
-          <div class="stat-num text-[clamp(32px,4vw,46px)] font-black bg-gradient-to-br from-primary to-[#4789BC] bg-clip-text text-transparent leading-none mb-1.5">4.5 <span class="text-[#FF9500] [-webkit-text-fill-color:#FF9500]">★</span></div>
+          <div class="stat-num text-[clamp(32px,4vw,46px)] font-black bg-gradient-to-br from-primary to-[#5E8BCF] bg-clip-text text-transparent leading-none mb-1.5">4.5 <span class="text-[#F6BD05] [-webkit-text-fill-color:#F6BD05]">★</span></div>
           <div class="text-sm text-brandmuted font-medium">App Store Rating</div>
         </div>
       </div>
+
+      <!-- Languages — teal.100 bg, teal.500 icon (#479A9A) -->
       <div class="flex flex-col items-center gap-3">
-        <div class="w-12 h-12 rounded-2xl bg-[#F0FDF4] border border-[#16A34A]/15 flex items-center justify-center icon-glow-green">
-          <span class="material-symbols-rounded text-[#16A34A] text-[22px]">language</span>
+        <div class="w-12 h-12 rounded-2xl bg-[#F2F8F8] border border-[#479A9A]/20 flex items-center justify-center icon-glow-teal">
+          <span class="material-symbols-rounded text-[#479A9A] text-[22px]">language</span>
         </div>
         <div>
-          <div class="stat-num text-[clamp(32px,4vw,46px)] font-black bg-gradient-to-br from-primary to-[#4789BC] bg-clip-text text-transparent leading-none mb-1.5">14+</div>
+          <div class="stat-num text-[clamp(32px,4vw,46px)] font-black bg-gradient-to-br from-primary to-[#5E8BCF] bg-clip-text text-transparent leading-none mb-1.5">14+</div>
           <div class="text-sm text-brandmuted font-medium">Languages</div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -299,17 +312,18 @@
   <section class="px-[5%] py-20 md:py-28" id="features">
     <div data-animate class="text-center max-w-2xl mx-auto mb-16">
       <span class="inline-block text-xs font-bold uppercase tracking-[1.5px] text-primary bg-primary-light py-[5px] px-3.5 rounded-full mb-5 border border-primary/20">Features</span>
-      <h2 class="text-[clamp(28px,4vw,46px)] font-extrabold tracking-[-1px] leading-[1.1] mb-4 bg-gradient-to-r from-primary-dark via-primary to-[#4789BC] bg-clip-text text-transparent pb-[0.06em]">Everything you need to stay on top of bills</h2>
+      <!-- gradient: primary.600 → primary.500 → primary.400 -->
+      <h2 class="text-[clamp(28px,4vw,46px)] font-extrabold tracking-[-1px] leading-[1.1] mb-4 bg-gradient-to-r from-primary-dark via-primary to-[#5E8BCF] bg-clip-text text-transparent pb-[0.06em]">Everything you need to stay on top of bills</h2>
       <p class="text-[17px] text-brandmuted max-w-[560px] mx-auto leading-relaxed">Powerful tools wrapped in a clean, intuitive interface that gets out of your way.</p>
     </div>
 
     <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-4">
 
-      <!-- Bills (hero card) -->
+      <!-- Bills — primary.100 #F0F4FA, primary.500 #396FC0 -->
       <article id="bills" data-animate class="pcard shine-card group md:col-span-4 scroll-mt-24 overflow-hidden p-8 md:p-10">
         <div class="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#E6F1F9] text-primary border border-primary/20 mb-5 icon-glow-blue">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#F0F4FA] text-[#396FC0] border border-[#396FC0]/20 mb-5 icon-glow-blue">
               <span class="material-symbols-rounded text-[24px]">notifications</span>
             </div>
             <h3 class="text-2xl font-extrabold tracking-[-0.5px] mb-3 text-brandtext">See every bill at a glance</h3>
@@ -321,159 +335,172 @@
             </ul>
           </div>
           <div class="flex justify-center md:justify-end">
-            <img src="images/phone.png" alt="RemindPay monthly bills view" class="w-auto max-h-[420px] md:max-h-[460px] block drop-shadow-[0_24px_60px_rgba(46,111,168,0.35)]" />
+            <img src="images/phone.png" alt="RemindPay monthly bills view" class="w-auto max-h-[420px] md:max-h-[460px] block drop-shadow-[0_24px_60px_rgba(57,111,192,0.32)]" />
           </div>
         </div>
       </article>
 
-      <!-- Warranty -->
+      <!-- Warranty — danger.subtle #FDF0F0, danger.default #E5484D -->
       <article id="warranty" data-animate data-delay="0.06" class="pcard shine-card group md:col-span-2 scroll-mt-24 overflow-hidden p-8">
-        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#FFF1F2] text-[#E11D48] border border-[#E11D48]/20 mb-5 icon-glow-rose">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#FDF0F0] text-[#E5484D] border border-[#E5484D]/20 mb-5 icon-glow-red">
           <span class="material-symbols-rounded text-[24px]">shield</span>
         </div>
         <h3 class="text-xl font-extrabold tracking-[-0.4px] mb-2 text-brandtext">Never lose a warranty</h3>
         <p class="text-[15px] text-brandmuted leading-[1.75]">Snap the receipt, track expiry dates, and get reminded before coverage runs out.</p>
         <div class="-mx-8 -mb-8 mt-6 h-[360px] md:h-[410px] overflow-hidden flex items-start justify-center">
-          <img src="images/warrenty.png" alt="RemindPay warranty cards" class="h-full w-auto block drop-shadow-[0_20px_50px_rgba(225,29,72,0.32)]" />
+          <img src="images/warrenty.png" alt="RemindPay warranty cards" class="h-full w-auto block drop-shadow-[0_20px_50px_rgba(229,72,77,0.30)]" />
         </div>
       </article>
 
-      <!-- Reports -->
+      <!-- Reports — teal.100 #F2F8F8, teal.500 #479A9A -->
       <article id="reports" data-animate class="pcard shine-card group md:col-span-2 scroll-mt-24 overflow-hidden p-8">
-        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#F0FDF4] text-[#16A34A] border border-[#16A34A]/20 mb-5 icon-glow-green">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#F2F8F8] text-[#479A9A] border border-[#479A9A]/20 mb-5 icon-glow-teal">
           <span class="material-symbols-rounded text-[24px]">bar_chart</span>
         </div>
         <h3 class="text-xl font-extrabold tracking-[-0.4px] mb-2 text-brandtext">Understand your spending</h3>
         <p class="text-[15px] text-brandmuted leading-[1.75]">Charts break down bills by category — today, this week, month, or year.</p>
-        <img src="images/charts.png" alt="RemindPay spending charts" class="mt-6 mx-auto w-auto max-h-[190px] block drop-shadow-[0_20px_50px_rgba(52,199,89,0.35)]" />
+        <img src="images/charts.png" alt="RemindPay spending charts" class="mt-6 mx-auto w-auto max-h-[190px] block drop-shadow-[0_20px_50px_rgba(71,154,154,0.32)]" />
       </article>
 
-      <!-- Widgets -->
+      <!-- Widgets — primary.100 #F0F4FA, primary.500 #396FC0 -->
       <article id="widgets" data-animate data-delay="0.06" class="pcard shine-card group md:col-span-2 scroll-mt-24 overflow-hidden p-8">
-        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#EEF5FB] text-primary border border-primary/20 mb-5 icon-glow-blue">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#F0F4FA] text-[#396FC0] border border-[#396FC0]/20 mb-5 icon-glow-blue">
           <span class="material-symbols-rounded text-[24px]">widgets</span>
         </div>
         <h3 class="text-xl font-extrabold tracking-[-0.4px] mb-2 text-brandtext">Right on your home screen</h3>
         <p class="text-[15px] text-brandmuted leading-[1.75]">See upcoming payments without opening the app — Home Screen &amp; Lock Screen.</p>
-        <img src="images/widgets.png" alt="RemindPay home screen widgets" class="mt-6 mx-auto w-auto max-h-[190px] block drop-shadow-[0_20px_50px_rgba(46,111,168,0.35)]" />
+        <img src="images/widgets.png" alt="RemindPay home screen widgets" class="mt-6 mx-auto w-auto max-h-[190px] block drop-shadow-[0_20px_50px_rgba(57,111,192,0.32)]" />
       </article>
 
-      <!-- Integrations -->
+      <!-- Integrations — orange.100 #FEF5F1, orange.600 #F75D12 -->
       <article id="integrations" data-animate class="pcard shine-card group md:col-span-2 scroll-mt-24 overflow-hidden p-8">
-        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#FFF7ED] text-[#EA580C] border border-[#EA580C]/20 mb-5 icon-glow-orange">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#FEF5F1] text-[#F75D12] border border-[#F75D12]/20 mb-5 icon-glow-orange">
           <span class="material-symbols-rounded text-[24px]">watch</span>
         </div>
         <h3 class="text-xl font-extrabold tracking-[-0.4px] mb-2 text-brandtext">Across your Apple ecosystem</h3>
         <p class="text-[15px] text-brandmuted leading-[1.75]">Siri Shortcuts, an Apple Watch app, and tap-to-pay automations — RemindPay integrates deeply with iOS.</p>
-        <img src="images/shortcuts.png" alt="RemindPay Siri Shortcuts and Apple integrations" class="mt-6 mx-auto w-auto max-h-[190px] block drop-shadow-[0_20px_44px_rgba(255,149,0,0.30)]" />
+        <img src="images/shortcuts.png" alt="RemindPay Siri Shortcuts and Apple integrations" class="mt-6 mx-auto w-auto max-h-[190px] block drop-shadow-[0_20px_44px_rgba(247,93,18,0.28)]" />
       </article>
 
     </div>
 
     <!-- More features (compact) -->
     <div class="max-w-5xl mx-auto grid grid-cols-1 xs520:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+
+      <!-- Smart Reminders — primary -->
       <div data-animate class="pcard p-7">
-        <div class="inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-[#E6F1F9] text-primary border border-primary/20 mb-4 icon-glow-blue"><span class="material-symbols-rounded text-[22px]">notifications_active</span></div>
+        <div class="inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-[#F0F4FA] text-[#396FC0] border border-[#396FC0]/20 mb-4 icon-glow-blue"><span class="material-symbols-rounded text-[22px]">notifications_active</span></div>
         <h3 class="text-[17px] font-bold mb-2 text-brandtext">Smart Reminders</h3>
         <p class="text-sm text-brandmuted leading-[1.75]">Get notified 1–3 days or 1–2 weeks ahead. Never pay a late fee again.</p>
       </div>
+
+      <!-- Recurring Bills — teal -->
       <div data-animate data-delay="0.05" class="pcard p-7">
-        <div class="inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-[#F0FDF4] text-[#16A34A] border border-[#16A34A]/20 mb-4 icon-glow-green"><span class="material-symbols-rounded text-[22px]">autorenew</span></div>
+        <div class="inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-[#F2F8F8] text-[#479A9A] border border-[#479A9A]/20 mb-4 icon-glow-teal"><span class="material-symbols-rounded text-[22px]">autorenew</span></div>
         <h3 class="text-[17px] font-bold mb-2 text-brandtext">Recurring Bills</h3>
         <p class="text-sm text-brandmuted leading-[1.75]">Set daily, weekly, monthly, or yearly once — RemindPay handles the rest.</p>
       </div>
+
+      <!-- Multi-Currency — orange -->
       <div data-animate data-delay="0.1" class="pcard p-7">
-        <div class="inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-[#FFF7ED] text-[#EA580C] border border-[#EA580C]/20 mb-4 icon-glow-orange"><span class="material-symbols-rounded text-[22px]">language</span></div>
+        <div class="inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-[#FEF5F1] text-[#F75D12] border border-[#F75D12]/20 mb-4 icon-glow-orange"><span class="material-symbols-rounded text-[22px]">language</span></div>
         <h3 class="text-[17px] font-bold mb-2 text-brandtext">Multi-Currency</h3>
         <p class="text-sm text-brandmuted leading-[1.75]">Track bills in any currency — or set your own custom one.</p>
       </div>
+
+      <!-- iCloud Sync — primary -->
       <div data-animate class="pcard p-7">
-        <div class="inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-[#EEF5FB] text-primary border border-primary/20 mb-4 icon-glow-blue"><span class="material-symbols-rounded text-[22px]">cloud</span></div>
+        <div class="inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-[#F0F4FA] text-[#396FC0] border border-[#396FC0]/20 mb-4 icon-glow-blue"><span class="material-symbols-rounded text-[22px]">cloud</span></div>
         <h3 class="text-[17px] font-bold mb-2 text-brandtext">iCloud Sync</h3>
         <p class="text-sm text-brandmuted leading-[1.75]">Your bills stay in sync across iPhone, iPad, and Apple Watch.</p>
       </div>
+
+      <!-- Categories — primary -->
       <div data-animate data-delay="0.05" class="pcard p-7">
-        <div class="inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-[#EEF5FB] text-primary border border-primary/20 mb-4 icon-glow-blue"><span class="material-symbols-rounded text-[22px]">sell</span></div>
+        <div class="inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-[#F0F4FA] text-[#396FC0] border border-[#396FC0]/20 mb-4 icon-glow-blue"><span class="material-symbols-rounded text-[22px]">sell</span></div>
         <h3 class="text-[17px] font-bold mb-2 text-brandtext">Categories &amp; Labels</h3>
         <p class="text-sm text-brandmuted leading-[1.75]">Organize bills your way with custom names, colors, and icons.</p>
       </div>
+
+      <!-- Attachments — gold.100 #FFFAEB, gold.600 #C99900 (no violet in design tokens) -->
       <div data-animate data-delay="0.1" class="pcard p-7">
-        <div class="inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-[#F5F3FF] text-[#8B5CF6] border border-[#8B5CF6]/20 mb-4 icon-glow-violet"><span class="material-symbols-rounded text-[22px]">attach_file</span></div>
+        <div class="inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-[#FFFAEB] text-[#C99900] border border-[#F6BD05]/25 mb-4 icon-glow-gold"><span class="material-symbols-rounded text-[22px]">attach_file</span></div>
         <h3 class="text-[17px] font-bold mb-2 text-brandtext">Attachments &amp; Bill Split</h3>
         <p class="text-sm text-brandmuted leading-[1.75]">Attach receipts and split shared expenses with friends in seconds.</p>
       </div>
+
     </div>
   </section>
 
   <!-- TESTIMONIALS (MARQUEE) -->
-  <section class="py-20 md:py-28 border-y border-black/[0.05]" id="reviews" style="background:linear-gradient(180deg,#F6F8FB 0%,#ffffff 100%);">
+  <section class="py-20 md:py-28 border-y border-black/[0.05]" id="reviews" style="background:linear-gradient(180deg,#F6F7F8 0%,#ffffff 100%);">
     <div data-animate class="text-center px-[5%] max-w-2xl mx-auto mb-14">
       <span class="inline-block text-xs font-bold uppercase tracking-[1.5px] text-primary bg-primary-light py-[5px] px-3.5 rounded-full mb-5 border border-primary/20">Reviews</span>
-      <h2 class="text-[clamp(28px,4vw,46px)] font-extrabold tracking-[-1px] leading-[1.1] mb-4 bg-gradient-to-r from-primary-dark via-primary to-[#4789BC] bg-clip-text text-transparent pb-[0.06em]">Loved by users worldwide</h2>
+      <h2 class="text-[clamp(28px,4vw,46px)] font-extrabold tracking-[-1px] leading-[1.1] mb-4 bg-gradient-to-r from-primary-dark via-primary to-[#5E8BCF] bg-clip-text text-transparent pb-[0.06em]">Loved by users worldwide</h2>
       <p class="text-[17px] text-brandmuted max-w-[560px] mx-auto">Don't take our word for it — here's what real users say.</p>
     </div>
 
     <div class="marquee-group edge-fade relative overflow-hidden">
       <div class="marquee-track flex gap-5 w-max py-2">
-        <!-- copy 1 -->
+        <!-- copy 1 — gold.500 #F6BD05 stars -->
         <figure class="pcard w-[340px] shrink-0 p-7">
-          <div class="text-[#FFC107] text-base tracking-[2px] mb-4">★★★★★</div>
+          <div class="text-[#F6BD05] text-base tracking-[2px] mb-4">★★★★★</div>
           <blockquote class="text-[15px] text-brandtext leading-[1.75] mb-5 font-medium">"This is exactly what I was looking for to keep track of my bills."</blockquote>
           <figcaption class="flex items-center gap-3"><span class="w-9 h-9 rounded-full grad-avatar flex items-center justify-center text-[13px] font-bold text-white shrink-0">S</span><span class="text-xs text-brandmuted font-medium">App Store Review</span></figcaption>
         </figure>
         <figure class="pcard w-[340px] shrink-0 p-7">
-          <div class="text-[#FFC107] text-base tracking-[2px] mb-4">★★★★★</div>
+          <div class="text-[#F6BD05] text-base tracking-[2px] mb-4">★★★★★</div>
           <blockquote class="text-[15px] text-brandtext leading-[1.75] mb-5 font-medium">"One of the best applications for payment reminders and it consumes very few resources."</blockquote>
           <figcaption class="flex items-center gap-3"><span class="w-9 h-9 rounded-full grad-avatar flex items-center justify-center text-[13px] font-bold text-white shrink-0">J</span><span class="text-xs text-brandmuted font-medium">App Store Review</span></figcaption>
         </figure>
         <figure class="pcard w-[340px] shrink-0 p-7">
-          <div class="text-[#FFC107] text-base tracking-[2px] mb-4">★★★★★</div>
+          <div class="text-[#F6BD05] text-base tracking-[2px] mb-4">★★★★★</div>
           <blockquote class="text-[15px] text-brandtext leading-[1.75] mb-5 font-medium">"The reminders help me stay on top of due dates. The interface is clean and easy to use. Highly recommend!"</blockquote>
           <figcaption class="flex items-center gap-3"><span class="w-9 h-9 rounded-full grad-avatar flex items-center justify-center text-[13px] font-bold text-white shrink-0">R</span><span class="text-xs text-brandmuted font-medium">App Store Review</span></figcaption>
         </figure>
         <figure class="pcard w-[340px] shrink-0 p-7">
-          <div class="text-[#FFC107] text-base tracking-[2px] mb-4">★★★★★</div>
+          <div class="text-[#F6BD05] text-base tracking-[2px] mb-4">★★★★★</div>
           <blockquote class="text-[15px] text-brandtext leading-[1.75] mb-5 font-medium">"A very useful app for keeping track of bills and receiving reminders when payments are due."</blockquote>
           <figcaption class="flex items-center gap-3"><span class="w-9 h-9 rounded-full grad-avatar flex items-center justify-center text-[13px] font-bold text-white shrink-0">L</span><span class="text-xs text-brandmuted font-medium">App Store Review</span></figcaption>
         </figure>
         <figure class="pcard w-[340px] shrink-0 p-7">
-          <div class="text-[#FFC107] text-base tracking-[2px] mb-4">★★★★★</div>
+          <div class="text-[#F6BD05] text-base tracking-[2px] mb-4">★★★★★</div>
           <blockquote class="text-[15px] text-brandtext leading-[1.75] mb-5 font-medium">"A small app with all the basics to be reminded about payments due. Neat work with a user-friendly UI."</blockquote>
           <figcaption class="flex items-center gap-3"><span class="w-9 h-9 rounded-full grad-avatar flex items-center justify-center text-[13px] font-bold text-white shrink-0">M</span><span class="text-xs text-brandmuted font-medium">App Store Review</span></figcaption>
         </figure>
         <figure class="pcard w-[340px] shrink-0 p-7">
-          <div class="text-[#FFC107] text-base tracking-[2px] mb-4">★★★★★</div>
+          <div class="text-[#F6BD05] text-base tracking-[2px] mb-4">★★★★★</div>
           <blockquote class="text-[15px] text-brandtext leading-[1.75] mb-5 font-medium">"RemindPay has completely transformed the way I manage my bills."</blockquote>
           <figcaption class="flex items-center gap-3"><span class="w-9 h-9 rounded-full grad-avatar flex items-center justify-center text-[13px] font-bold text-white shrink-0">A</span><span class="text-xs text-brandmuted font-medium">App Store Review</span></figcaption>
         </figure>
         <!-- copy 2 (seamless loop, hidden from a11y) -->
         <figure aria-hidden="true" class="pcard w-[340px] shrink-0 p-7">
-          <div class="text-[#FFC107] text-base tracking-[2px] mb-4">★★★★★</div>
+          <div class="text-[#F6BD05] text-base tracking-[2px] mb-4">★★★★★</div>
           <blockquote class="text-[15px] text-brandtext leading-[1.75] mb-5 font-medium">"This is exactly what I was looking for to keep track of my bills."</blockquote>
           <figcaption class="flex items-center gap-3"><span class="w-9 h-9 rounded-full grad-avatar flex items-center justify-center text-[13px] font-bold text-white shrink-0">S</span><span class="text-xs text-brandmuted font-medium">App Store Review</span></figcaption>
         </figure>
         <figure aria-hidden="true" class="pcard w-[340px] shrink-0 p-7">
-          <div class="text-[#FFC107] text-base tracking-[2px] mb-4">★★★★★</div>
+          <div class="text-[#F6BD05] text-base tracking-[2px] mb-4">★★★★★</div>
           <blockquote class="text-[15px] text-brandtext leading-[1.75] mb-5 font-medium">"One of the best applications for payment reminders and it consumes very few resources."</blockquote>
           <figcaption class="flex items-center gap-3"><span class="w-9 h-9 rounded-full grad-avatar flex items-center justify-center text-[13px] font-bold text-white shrink-0">J</span><span class="text-xs text-brandmuted font-medium">App Store Review</span></figcaption>
         </figure>
         <figure aria-hidden="true" class="pcard w-[340px] shrink-0 p-7">
-          <div class="text-[#FFC107] text-base tracking-[2px] mb-4">★★★★★</div>
+          <div class="text-[#F6BD05] text-base tracking-[2px] mb-4">★★★★★</div>
           <blockquote class="text-[15px] text-brandtext leading-[1.75] mb-5 font-medium">"The reminders help me stay on top of due dates. The interface is clean and easy to use."</blockquote>
           <figcaption class="flex items-center gap-3"><span class="w-9 h-9 rounded-full grad-avatar flex items-center justify-center text-[13px] font-bold text-white shrink-0">R</span><span class="text-xs text-brandmuted font-medium">App Store Review</span></figcaption>
         </figure>
         <figure aria-hidden="true" class="pcard w-[340px] shrink-0 p-7">
-          <div class="text-[#FFC107] text-base tracking-[2px] mb-4">★★★★★</div>
+          <div class="text-[#F6BD05] text-base tracking-[2px] mb-4">★★★★★</div>
           <blockquote class="text-[15px] text-brandtext leading-[1.75] mb-5 font-medium">"A very useful app for keeping track of bills and receiving reminders when payments are due."</blockquote>
           <figcaption class="flex items-center gap-3"><span class="w-9 h-9 rounded-full grad-avatar flex items-center justify-center text-[13px] font-bold text-white shrink-0">L</span><span class="text-xs text-brandmuted font-medium">App Store Review</span></figcaption>
         </figure>
         <figure aria-hidden="true" class="pcard w-[340px] shrink-0 p-7">
-          <div class="text-[#FFC107] text-base tracking-[2px] mb-4">★★★★★</div>
+          <div class="text-[#F6BD05] text-base tracking-[2px] mb-4">★★★★★</div>
           <blockquote class="text-[15px] text-brandtext leading-[1.75] mb-5 font-medium">"A small app with all the basics to be reminded about payments due. Neat work with a user-friendly UI."</blockquote>
           <figcaption class="flex items-center gap-3"><span class="w-9 h-9 rounded-full grad-avatar flex items-center justify-center text-[13px] font-bold text-white shrink-0">M</span><span class="text-xs text-brandmuted font-medium">App Store Review</span></figcaption>
         </figure>
         <figure aria-hidden="true" class="pcard w-[340px] shrink-0 p-7">
-          <div class="text-[#FFC107] text-base tracking-[2px] mb-4">★★★★★</div>
+          <div class="text-[#F6BD05] text-base tracking-[2px] mb-4">★★★★★</div>
           <blockquote class="text-[15px] text-brandtext leading-[1.75] mb-5 font-medium">"RemindPay has completely transformed the way I manage my bills."</blockquote>
           <figcaption class="flex items-center gap-3"><span class="w-9 h-9 rounded-full grad-avatar flex items-center justify-center text-[13px] font-bold text-white shrink-0">A</span><span class="text-xs text-brandmuted font-medium">App Store Review</span></figcaption>
         </figure>
@@ -483,19 +510,21 @@
 
   <!-- CTA -->
   <section class="px-[5%] py-20 md:py-28" id="download">
-    <div data-animate class="cta-noise relative overflow-hidden max-w-5xl mx-auto rounded-[32px] text-center text-white px-[6%] py-16 md:py-20" style="background:linear-gradient(135deg,#1A4F7A 0%,#2E6FA8 45%,#3A80C0 75%,#4789BC 100%);">
-      <!-- Radial highlight at top-center -->
+    <!-- CTA gradient: primary.800 #172E52 → primary.500 #396FC0 → primary.400 #5E8BCF -->
+    <div data-animate class="cta-noise relative overflow-hidden max-w-5xl mx-auto rounded-[32px] text-center text-white px-[6%] py-16 md:py-20" style="background:linear-gradient(135deg,#172E52 0%,#396FC0 45%,#5E8BCF 80%,#5E8BCF 100%);">
+      <!-- Radial highlight -->
       <div aria-hidden="true" class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[280px] rounded-full" style="background:radial-gradient(ellipse,rgba(255,255,255,0.13) 0%,transparent 70%);"></div>
-      <!-- Decorative orbs -->
-      <div aria-hidden="true" class="pointer-events-none absolute -bottom-12 -left-12 w-48 h-48 rounded-full" style="background:rgba(71,137,188,0.45);filter:blur(60px);"></div>
-      <div aria-hidden="true" class="pointer-events-none absolute -top-8 -right-8 w-36 h-36 rounded-full" style="background:rgba(46,111,168,0.55);filter:blur(50px);"></div>
+      <!-- Decorative orbs — primary.400 / primary.500 -->
+      <div aria-hidden="true" class="pointer-events-none absolute -bottom-12 -left-12 w-48 h-48 rounded-full" style="background:rgba(94,139,207,0.45);filter:blur(60px);"></div>
+      <div aria-hidden="true" class="pointer-events-none absolute -top-8 -right-8 w-36 h-36 rounded-full" style="background:rgba(57,111,192,0.55);filter:blur(50px);"></div>
 
       <div class="relative z-10">
         <span class="inline-block text-xs font-bold uppercase tracking-[1.5px] text-white/75 bg-white/12 border border-white/20 py-[5px] px-3.5 rounded-full mb-6">Get Started Free</span>
         <h2 class="text-[clamp(28px,4vw,50px)] font-black tracking-[-1.5px] mb-4">Start tracking your bills today</h2>
         <p class="text-[17px] text-white/80 max-w-[520px] mx-auto mb-10 leading-relaxed">Free trial · one-time payment to unlock — no subscriptions. Works on iPhone, iPad, Apple Watch, and Mac.</p>
-        <a class="inline-flex items-center gap-2.5 bg-white text-primary py-4 px-9 rounded-full text-[15px] font-bold no-underline shadow-btn-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_44px_rgba(0,0,0,0.26)]" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170" target="_blank" rel="noopener">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#2E6FA8"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <!-- White button, Apple logo in primary.500 -->
+        <a class="inline-flex items-center gap-2.5 bg-white text-primary py-4 px-9 rounded-full text-[15px] font-bold no-underline shadow-btn-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_44px_rgba(27,32,39,0.26)]" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#396FC0"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
           Download on the App Store
         </a>
         <p class="text-[13px] text-white/55 mt-5">Available on iOS 17+ · Free trial · One-time payment</p>
@@ -503,7 +532,7 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER — neutral.900 #1B2027 background -->
   <footer class="bg-brandtext text-white/70 pt-[60px] pb-10 px-[5%]">
     <div class="max-w-6xl mx-auto grid grid-cols-1 xs520:grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-12">
       <div>
