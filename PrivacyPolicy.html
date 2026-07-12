@@ -1,184 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Privacy Policy — Bills Keeper</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Privacy Policy – RemindPay Bill Reminder & Warranty Tracker</title>
+  <meta name="description" content="RemindPay's privacy policy: how your data is stored, what we collect, and how we keep your bills and warranties private." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://remindpay.app/PrivacyPolicy.html" />
+
+  <!-- Icons & PWA -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#2E6FA8" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="RemindPay" />
+  <meta property="og:title" content="RemindPay Privacy Policy" />
+  <meta property="og:description" content="How RemindPay handles your data: stored privately on your device, never on our servers." />
+  <meta property="og:url" content="https://remindpay.app/PrivacyPolicy.html" />
+  <meta property="og:image" content="https://remindpay.app/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RemindPay Privacy Policy" />
+  <meta name="twitter:description" content="How RemindPay handles your data: stored privately on your device, never on our servers." />
+  <meta name="twitter:image" content="https://remindpay.app/images/og-image.png" />
+
+  <!-- Apple-specific -->
+  <meta name="apple-itunes-app" content="app-id=1609633170" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="RemindPay" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,0" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#2E6FA8', dark: '#1F5683', light: '#DCE8F2' },
+            brandtext: '#1A1A2E',
+            brandmuted: '#6B7280',
+            brandborder: '#E5E7EB',
+            brandbg: '#F9FAFB',
+            surface: '#F7F7F8',
+            success: '#34C759',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          screens: {
+            xs520: '520px',
+            md880: '880px',
+          },
+          boxShadow: {
+            'primary-md': '0 8px 24px rgba(46,111,168,0.30)',
+            'primary-lg': '0 14px 34px rgba(46,111,168,0.42)',
+            'card-hover': '0 20px 50px rgba(26,26,46,0.10)',
+            'pillar-hover': '0 16px 48px rgba(46,111,168,0.12)',
+            'btn-white': '0 8px 30px rgba(0,0,0,0.18)',
+            'btn-white-hover': '0 14px 40px rgba(0,0,0,0.25)',
+          },
+        },
+      },
+    };
+  </script>
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      color: #1a1a1a;
-      background: #ffffff;
-    }
-
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
-
-    header {
-      margin-bottom: 48px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid #e5e5e5;
-    }
-
-    header h1 {
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: -0.3px;
-      color: #111;
-      margin-bottom: 6px;
-    }
-
-    header p {
-      font-size: 14px;
-      color: #888;
-    }
-
-    h2 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #111;
-      margin-top: 40px;
-      margin-bottom: 12px;
-    }
-
-    h3 {
-      font-size: 16px;
-      font-weight: 600;
-      color: #333;
-      margin-top: 28px;
-      margin-bottom: 8px;
-    }
-
-    p {
-      margin-bottom: 16px;
-      color: #333;
-    }
-
-    ul {
-      margin: 0 0 16px 20px;
-      color: #333;
-    }
-
-    ul li {
-      margin-bottom: 8px;
-    }
-
-    a {
-      color: #007aff;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      margin-top: 64px;
-      padding-top: 24px;
-      border-top: 1px solid #e5e5e5;
-      font-size: 13px;
-      color: #aaa;
-      text-align: center;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      body { background: #111; color: #e0e0e0; }
-      header { border-bottom-color: #2a2a2a; }
-      header h1, h2 { color: #f0f0f0; }
-      h3 { color: #ccc; }
-      p, ul { color: #ccc; }
-      footer { border-top-color: #2a2a2a; color: #555; }
-      a { color: #4da3ff; }
-    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    summary::-webkit-details-marker { display: none; }
   </style>
 </head>
-<body>
-  <div class="container">
+<body class="text-brandtext bg-white">
 
-    <header>
-      <h1>Privacy Policy</h1>
-      <p>Bills Keeper &nbsp;·&nbsp; Last updated: June 8, 2025</p>
-    </header>
+  <!-- NAV -->
+  <nav class="sticky top-0 z-[100] bg-white/70 backdrop-blur-xl border-b border-black/[0.05]">
+    <div class="max-w-6xl mx-auto h-16 px-[5%] md:px-6 flex items-center justify-between">
+      <a class="flex items-center gap-2.5 no-underline" href="/">
+        <img class="w-9 h-9 object-cover block" src="images/icon.png" alt="RemindPay" />
+        <span class="text-[17px] font-bold text-brandtext">RemindPay</span>
+      </a>
+      <a class="inline-flex items-center bg-primary text-white text-sm font-semibold px-4 py-2 rounded-full no-underline shadow-primary-md transition-all duration-200 hover:bg-primary-dark hover:-translate-y-0.5" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170">Download</a>
+    </div>
+  </nav>
 
-    <p>This Privacy Policy describes how Bills Keeper ("we", "us", or "our") handles your information when you use the app. We are committed to protecting your privacy.</p>
+  <!-- HERO -->
+  <section class="pt-[72px] pb-10 px-[5%] text-center bg-gradient-to-b from-[#EEF5FB] to-white">
+    <div class="max-w-[900px] mx-auto">
+      <span class="inline-flex items-center gap-1.5 bg-primary-light text-primary text-xs font-bold uppercase tracking-[1.5px] py-[5px] px-3.5 rounded-full border border-primary/30">Legal</span>
+      <h1 class="text-[clamp(36px,5vw,56px)] font-black leading-[1.15] tracking-[-1.5px] mt-5 mb-3.5 pb-[0.08em] bg-gradient-to-br from-primary to-[#4789BC] bg-clip-text text-transparent">Privacy Policy</h1>
+      <p class="text-[17px] text-brandmuted max-w-[560px] mx-auto">Your data stays on your device. Here's exactly how RemindPay handles your information.</p>
+      <p class="text-sm text-brandmuted/70 mt-3">Last updated: June 8, 2025</p>
+      <div class="flex flex-wrap gap-2.5 justify-center mt-8">
+        <a class="inline-flex items-center gap-[7px] bg-white border-[1.5px] border-brandborder rounded-full py-[9px] px-[18px] text-sm font-semibold text-brandtext no-underline transition-all duration-200 hover:border-primary hover:-translate-y-0.5" href="#data-storage"><span class="w-2 h-2 rounded-full bg-primary"></span>Data Storage</a>
+        <a class="inline-flex items-center gap-[7px] bg-white border-[1.5px] border-brandborder rounded-full py-[9px] px-[18px] text-sm font-semibold text-brandtext no-underline transition-all duration-200 hover:border-[#16A34A] hover:-translate-y-0.5" href="#data-collected"><span class="w-2 h-2 rounded-full bg-[#16A34A]"></span>Data Collected</a>
+        <a class="inline-flex items-center gap-[7px] bg-white border-[1.5px] border-brandborder rounded-full py-[9px] px-[18px] text-sm font-semibold text-brandtext no-underline transition-all duration-200 hover:border-[#FF9500] hover:-translate-y-0.5" href="#permissions"><span class="w-2 h-2 rounded-full bg-[#FF9500]"></span>Permissions</a>
+        <a class="inline-flex items-center gap-[7px] bg-white border-[1.5px] border-brandborder rounded-full py-[9px] px-[18px] text-sm font-semibold text-brandtext no-underline transition-all duration-200 hover:border-[#8B5CF6] hover:-translate-y-0.5" href="#third-party"><span class="w-2 h-2 rounded-full bg-[#8B5CF6]"></span>Third-Party</a>
+        <a class="inline-flex items-center gap-[7px] bg-white border-[1.5px] border-brandborder rounded-full py-[9px] px-[18px] text-sm font-semibold text-brandtext no-underline transition-all duration-200 hover:border-[#D97706] hover:-translate-y-0.5" href="#premium"><span class="w-2 h-2 rounded-full bg-[#D97706]"></span>Premium</a>
+        <a class="inline-flex items-center gap-[7px] bg-white border-[1.5px] border-brandborder rounded-full py-[9px] px-[18px] text-sm font-semibold text-brandtext no-underline transition-all duration-200 hover:border-[#E11D48] hover:-translate-y-0.5" href="#contact"><span class="w-2 h-2 rounded-full bg-[#E11D48]"></span>Contact</a>
+      </div>
+    </div>
+  </section>
 
-    <h2>Data Storage</h2>
-    <p>Bills Keeper stores all your data locally on your device. If you are a premium user, your data is synced via iCloud to your other Apple devices using Apple's CloudKit infrastructure. We do not operate our own servers and never have access to your data.</p>
+  <!-- CONTENT -->
+  <main class="px-[5%] pb-5">
 
-    <h2>Data We Collect</h2>
-    <p>We do not collect, store, or have access to any personal data you enter in the app. All your bills, warranties, attachments, and settings remain exclusively on your device (and your personal iCloud if you are a premium user).</p>
-    <p>The only information we collect is anonymous usage analytics — such as which screens are visited and which features are used — to help us understand how the app is used and improve it over time. This data cannot identify you personally.</p>
+    <div class="max-w-[1100px] mx-auto pt-10 pb-2">
+      <p class="text-[16px] leading-[1.8] text-brandmuted">This Privacy Policy describes how RemindPay ("we", "us", or "our") handles your information when you use the app. We are committed to protecting your privacy.</p>
+    </div>
 
-    <h2>Camera and Photo Library</h2>
-    <p>With your permission, the app can access your camera and photo library to attach receipts or documents to bills and warranties. This data is stored only on your device and is never uploaded to our servers.</p>
+    <!-- Data Storage -->
+    <section class="max-w-[1100px] mx-auto py-14 border-b border-brandborder scroll-mt-[88px]" id="data-storage">
+      <div class="flex items-center gap-3.5 mb-7">
+        <div class="w-11 h-11 rounded-full flex items-center justify-center bg-[#E6F1F9] border border-primary/40 flex-shrink-0"><span class="material-symbols-rounded text-primary !text-[22px]" style="font-variation-settings: 'FILL' 1">lock</span></div>
+        <h2 class="text-[22px] font-extrabold tracking-[-0.5px]">Data Storage</h2>
+      </div>
+      <div class="border border-brandborder rounded-2xl bg-white p-[22px]">
+        <p class="text-[15px] leading-[1.8] text-brandmuted">RemindPay stores all your data locally on your device. If you are a premium user, your data is synced via iCloud to your other Apple devices using Apple's CloudKit infrastructure. We do not operate our own servers and never have access to your data.</p>
+      </div>
+    </section>
 
-    <h2>Notifications</h2>
-    <p>With your permission, the app sends local notifications to remind you of upcoming bill due dates. These notifications are generated entirely on your device and no notification content is sent to external servers.</p>
+    <!-- Data We Collect -->
+    <section class="max-w-[1100px] mx-auto py-14 border-b border-brandborder scroll-mt-[88px]" id="data-collected">
+      <div class="flex items-center gap-3.5 mb-7">
+        <div class="w-11 h-11 rounded-full flex items-center justify-center bg-[#F0FDF4] border border-[#16A34A]/40 flex-shrink-0"><span class="material-symbols-rounded text-[#16A34A] !text-[22px]" style="font-variation-settings: 'FILL' 1">privacy_tip</span></div>
+        <h2 class="text-[22px] font-extrabold tracking-[-0.5px]">Data We Collect</h2>
+      </div>
+      <div class="border border-brandborder rounded-2xl bg-white p-[22px] space-y-4">
+        <p class="text-[15px] leading-[1.8] text-brandmuted">We do not collect, store, or have access to any personal data you enter in the app. All your bills, warranties, attachments, and settings remain exclusively on your device (and your personal iCloud if you are a premium user).</p>
+        <p class="text-[15px] leading-[1.8] text-brandmuted">The only information we collect is anonymous usage analytics (which screens are visited, which features are used) to help us understand how the app is used and improve it over time. This data cannot identify you personally.</p>
+      </div>
+    </section>
 
-    <h2>Third-Party Services</h2>
-    <p>The app uses the following third-party services, each governed by their own privacy policies:</p>
-    <ul>
-      <li><strong>Apple iCloud / CloudKit</strong> — for premium data sync across your devices</li>
-      <li><strong>Firebase Analytics</strong> — for anonymous usage analytics</li>
-      <li><strong>TelemetryDeck</strong> — for privacy-preserving analytics</li>
-      <li><strong>RevenueCat / StoreKit</strong> — for managing in-app purchases</li>
-    </ul>
+    <!-- Permissions -->
+    <section class="max-w-[1100px] mx-auto py-14 border-b border-brandborder scroll-mt-[88px]" id="permissions">
+      <div class="flex items-center gap-3.5 mb-7">
+        <div class="w-11 h-11 rounded-full flex items-center justify-center bg-[#FFF7ED] border border-[#FF9500]/40 flex-shrink-0"><span class="material-symbols-rounded text-[#FF9500] !text-[22px]" style="font-variation-settings: 'FILL' 1">tune</span></div>
+        <h2 class="text-[22px] font-extrabold tracking-[-0.5px]">Permissions</h2>
+      </div>
+      <div class="space-y-3">
+        <div class="border border-brandborder rounded-2xl bg-white p-[22px]">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="material-symbols-rounded text-[#FF9500] !text-[20px]" style="font-variation-settings: 'FILL' 1">photo_camera</span>
+            <h3 class="text-[17px] font-bold">Camera &amp; Photo Library</h3>
+          </div>
+          <p class="text-[15px] leading-[1.8] text-brandmuted">With your permission, the app can access your camera and photo library to attach receipts or documents to bills and warranties. This data is stored only on your device and is never uploaded to our servers.</p>
+        </div>
+        <div class="border border-brandborder rounded-2xl bg-white p-[22px]">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="material-symbols-rounded text-[#FF9500] !text-[20px]" style="font-variation-settings: 'FILL' 1">notifications</span>
+            <h3 class="text-[17px] font-bold">Notifications</h3>
+          </div>
+          <p class="text-[15px] leading-[1.8] text-brandmuted">With your permission, the app sends local notifications to remind you of upcoming bill due dates. These notifications are generated entirely on your device and no notification content is sent to external servers.</p>
+        </div>
+      </div>
+    </section>
 
-    <h2>Premium Purchase</h2>
-    <p>Bills Keeper offers a one-time, non-consumable lifetime purchase that unlocks the full feature set of the app. There are no subscriptions or recurring charges.</p>
+    <!-- Third-Party Services -->
+    <section class="max-w-[1100px] mx-auto py-14 border-b border-brandborder scroll-mt-[88px]" id="third-party">
+      <div class="flex items-center gap-3.5 mb-7">
+        <div class="w-11 h-11 rounded-full flex items-center justify-center bg-[#F5F3FF] border border-[#8B5CF6]/40 flex-shrink-0"><span class="material-symbols-rounded text-[#8B5CF6] !text-[22px]" style="font-variation-settings: 'FILL' 1">hub</span></div>
+        <h2 class="text-[22px] font-extrabold tracking-[-0.5px]">Third-Party Services</h2>
+      </div>
+      <div class="border border-brandborder rounded-2xl bg-white p-[22px]">
+        <p class="text-[15px] leading-[1.8] text-brandmuted mb-5">The app uses the following third-party services, each governed by their own privacy policies:</p>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 rounded-full bg-[#8B5CF6] mt-[7px] flex-shrink-0"></span>
+            <span class="text-[15px] leading-[1.7] text-brandmuted"><strong class="text-brandtext font-semibold">Apple iCloud / CloudKit</strong>: premium data sync across your devices</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 rounded-full bg-[#8B5CF6] mt-[7px] flex-shrink-0"></span>
+            <span class="text-[15px] leading-[1.7] text-brandmuted"><strong class="text-brandtext font-semibold">Firebase Analytics</strong>: anonymous usage analytics</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 rounded-full bg-[#8B5CF6] mt-[7px] flex-shrink-0"></span>
+            <span class="text-[15px] leading-[1.7] text-brandmuted"><strong class="text-brandtext font-semibold">TelemetryDeck</strong>: privacy-preserving analytics</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 rounded-full bg-[#8B5CF6] mt-[7px] flex-shrink-0"></span>
+            <span class="text-[15px] leading-[1.7] text-brandmuted"><strong class="text-brandtext font-semibold">RevenueCat / StoreKit</strong>: in-app purchase management</span>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-    <h3>Free Tier</h3>
-    <p>Without a purchase, you can use the following for free:</p>
-    <ul>
-      <li>Add up to <strong>10 bills</strong></li>
-      <li>Add up to <strong>5 warranty cards</strong></li>
-      <li>Bill reminders and notifications</li>
-      <li>Calendar integration</li>
-      <li>Apple Watch companion app</li>
-      <li>Home screen widgets</li>
-    </ul>
+    <!-- Premium Purchase -->
+    <section class="max-w-[1100px] mx-auto py-14 border-b border-brandborder scroll-mt-[88px]" id="premium">
+      <div class="flex items-center gap-3.5 mb-7">
+        <div class="w-11 h-11 rounded-full flex items-center justify-center bg-[#FFFBEB] border border-[#D97706]/40 flex-shrink-0"><span class="material-symbols-rounded text-[#D97706] !text-[22px]" style="font-variation-settings: 'FILL' 1">workspace_premium</span></div>
+        <h2 class="text-[22px] font-extrabold tracking-[-0.5px]">Premium Purchase</h2>
+      </div>
+      <p class="text-[15px] leading-[1.8] text-brandmuted mb-5">RemindPay offers a one-time, non-consumable lifetime purchase that unlocks the full feature set of the app. There are no subscriptions or recurring charges.</p>
+      <div class="space-y-3">
+        <details class="group border border-brandborder rounded-2xl bg-white overflow-hidden transition-shadow duration-200 open:shadow-pillar-hover">
+          <summary class="flex items-center justify-between gap-4 py-5 px-[22px] cursor-pointer list-none">
+            <span class="text-base font-bold leading-[1.4]">Free Tier</span>
+            <span class="material-symbols-rounded text-brandmuted flex-shrink-0 transition-transform duration-200 group-open:rotate-180 group-open:text-primary">expand_more</span>
+          </summary>
+          <div class="px-[22px] pb-5">
+            <p class="text-[15px] leading-[1.8] text-brandmuted mb-4">Without a purchase, you can use the following for free:</p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-success mt-[7px] flex-shrink-0"></span><span class="text-[15px] text-brandmuted">Add up to <strong class="text-brandtext font-semibold">10 bills</strong></span></li>
+              <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-success mt-[7px] flex-shrink-0"></span><span class="text-[15px] text-brandmuted">Add up to <strong class="text-brandtext font-semibold">5 warranty cards</strong></span></li>
+              <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-success mt-[7px] flex-shrink-0"></span><span class="text-[15px] text-brandmuted">Bill reminders and notifications</span></li>
+              <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-success mt-[7px] flex-shrink-0"></span><span class="text-[15px] text-brandmuted">Calendar integration</span></li>
+              <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-success mt-[7px] flex-shrink-0"></span><span class="text-[15px] text-brandmuted">Apple Watch companion app</span></li>
+              <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-success mt-[7px] flex-shrink-0"></span><span class="text-[15px] text-brandmuted">Home screen widgets</span></li>
+            </ul>
+          </div>
+        </details>
+        <details class="group border border-brandborder rounded-2xl bg-white overflow-hidden transition-shadow duration-200 open:shadow-pillar-hover">
+          <summary class="flex items-center justify-between gap-4 py-5 px-[22px] cursor-pointer list-none">
+            <span class="text-base font-bold leading-[1.4]">Premium Lifetime (One-Time Purchase)</span>
+            <span class="material-symbols-rounded text-brandmuted flex-shrink-0 transition-transform duration-200 group-open:rotate-180 group-open:text-primary">expand_more</span>
+          </summary>
+          <div class="px-[22px] pb-5">
+            <p class="text-[15px] leading-[1.8] text-brandmuted mb-4">After purchasing Premium, you unlock:</p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-[#D97706] mt-[7px] flex-shrink-0"></span><span class="text-[15px] text-brandmuted"><strong class="text-brandtext font-semibold">Unlimited Bills</strong>: add as many bills as you need, no cap</span></li>
+              <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-[#D97706] mt-[7px] flex-shrink-0"></span><span class="text-[15px] text-brandmuted"><strong class="text-brandtext font-semibold">Unlimited Warranty Cards</strong>: store all your product warranties</span></li>
+              <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-[#D97706] mt-[7px] flex-shrink-0"></span><span class="text-[15px] text-brandmuted"><strong class="text-brandtext font-semibold">Attachments</strong>: attach receipts, invoices, and documents to any bill or warranty</span></li>
+              <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-[#D97706] mt-[7px] flex-shrink-0"></span><span class="text-[15px] text-brandmuted"><strong class="text-brandtext font-semibold">iCloud Sync</strong>: your data syncs automatically across all your Apple devices</span></li>
+              <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-[#D97706] mt-[7px] flex-shrink-0"></span><span class="text-[15px] text-brandmuted"><strong class="text-brandtext font-semibold">Custom Categories</strong>: create and manage your own bill categories</span></li>
+              <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-[#D97706] mt-[7px] flex-shrink-0"></span><span class="text-[15px] text-brandmuted"><strong class="text-brandtext font-semibold">Multi-Currency</strong>: track bills in any currency</span></li>
+            </ul>
+          </div>
+        </details>
+        <details class="group border border-brandborder rounded-2xl bg-white overflow-hidden transition-shadow duration-200 open:shadow-pillar-hover">
+          <summary class="flex items-center justify-between gap-4 py-5 px-[22px] cursor-pointer list-none">
+            <span class="text-base font-bold leading-[1.4]">Restore Purchases</span>
+            <span class="material-symbols-rounded text-brandmuted flex-shrink-0 transition-transform duration-200 group-open:rotate-180 group-open:text-primary">expand_more</span>
+          </summary>
+          <p class="px-[22px] pb-5 text-[15px] leading-[1.8] text-brandmuted">If you have already purchased Premium, you can restore your purchase at any time from within the app without being charged again. Purchases are tied to your Apple ID.</p>
+        </details>
+        <details class="group border border-brandborder rounded-2xl bg-white overflow-hidden transition-shadow duration-200 open:shadow-pillar-hover">
+          <summary class="flex items-center justify-between gap-4 py-5 px-[22px] cursor-pointer list-none">
+            <span class="text-base font-bold leading-[1.4]">Refunds</span>
+            <span class="material-symbols-rounded text-brandmuted flex-shrink-0 transition-transform duration-200 group-open:rotate-180 group-open:text-primary">expand_more</span>
+          </summary>
+          <p class="px-[22px] pb-5 text-[15px] leading-[1.8] text-brandmuted">All purchases are processed by Apple through the App Store. Refund requests must be submitted to Apple directly at <a class="text-primary hover:text-primary-dark" href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+        </details>
+      </div>
+    </section>
 
-    <h3>Premium — Lifetime (One-Time Purchase)</h3>
-    <p>After purchasing Premium, you unlock:</p>
-    <ul>
-      <li><strong>Unlimited Bills</strong> — add as many bills as you need with no cap</li>
-      <li><strong>Unlimited Warranty Cards</strong> — store all your product warranties</li>
-      <li><strong>Attachments</strong> — attach receipts, invoices, and documents to any bill or warranty</li>
-      <li><strong>iCloud Sync</strong> — your data is automatically synced across all your Apple devices via iCloud</li>
-      <li><strong>Custom Categories</strong> — create and manage your own bill categories</li>
-      <li><strong>Multi-Currency</strong> — track bills in any currency</li>
-    </ul>
+    <!-- Children's Privacy -->
+    <section class="max-w-[1100px] mx-auto py-14 border-b border-brandborder scroll-mt-[88px]" id="children">
+      <div class="flex items-center gap-3.5 mb-7">
+        <div class="w-11 h-11 rounded-full flex items-center justify-center bg-[#FFF1F2] border border-[#E11D48]/40 flex-shrink-0"><span class="material-symbols-rounded text-[#E11D48] !text-[22px]" style="font-variation-settings: 'FILL' 1">child_care</span></div>
+        <h2 class="text-[22px] font-extrabold tracking-[-0.5px]">Children's Privacy</h2>
+      </div>
+      <div class="border border-brandborder rounded-2xl bg-white p-[22px]">
+        <p class="text-[15px] leading-[1.8] text-brandmuted">RemindPay is not directed at children under the age of 13. We do not knowingly collect personal information from children.</p>
+      </div>
+    </section>
 
-    <h3>Restore Purchases</h3>
-    <p>If you have already purchased Premium, you can restore your purchase at any time from within the app without being charged again. Purchases are tied to your Apple ID.</p>
+    <!-- Changes & Contact -->
+    <section class="max-w-[1100px] mx-auto py-14 scroll-mt-[88px]" id="contact">
+      <div class="flex items-center gap-3.5 mb-7">
+        <div class="w-11 h-11 rounded-full flex items-center justify-center bg-[#E6F1F9] border border-primary/40 flex-shrink-0"><span class="material-symbols-rounded text-primary !text-[22px]" style="font-variation-settings: 'FILL' 1">mail</span></div>
+        <h2 class="text-[22px] font-extrabold tracking-[-0.5px]">Changes &amp; Contact</h2>
+      </div>
+      <div class="space-y-3">
+        <div class="border border-brandborder rounded-2xl bg-white p-[22px]">
+          <h3 class="text-[17px] font-bold mb-3">Changes to This Policy</h3>
+          <p class="text-[15px] leading-[1.8] text-brandmuted">We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date. We encourage you to review this policy periodically.</p>
+        </div>
+        <div class="border border-brandborder rounded-2xl bg-white p-[22px]">
+          <h3 class="text-[17px] font-bold mb-3">Contact</h3>
+          <p class="text-[15px] leading-[1.8] text-brandmuted">If you have any questions about this Privacy Policy, please contact us at <a class="text-primary hover:text-primary-dark" href="mailto:rintoandrews90@gmail.com">rintoandrews90@gmail.com</a>. We typically reply within a few hours.</p>
+        </div>
+      </div>
+    </section>
 
-    <h3>Refunds</h3>
-    <p>All purchases are processed by Apple through the App Store. Refund requests must be submitted to Apple directly at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+  </main>
 
-    <h2>Children's Privacy</h2>
-    <p>Bills Keeper is not directed at children under the age of 13. We do not knowingly collect personal information from children.</p>
+  <!-- CTA BANNER -->
+  <section class="py-[80px] px-[5%] bg-gradient-to-br from-primary to-[#4789BC] text-center text-white">
+    <h2 class="text-[clamp(26px,3.5vw,38px)] font-black tracking-[-1px] mb-3">Questions about privacy?</h2>
+    <p class="text-base opacity-85 mb-7">We're happy to explain anything in plain language.</p>
+    <div class="flex gap-3.5 justify-center flex-wrap">
+      <a class="inline-flex items-center gap-2 bg-white text-primary py-4 px-9 rounded-full text-base font-bold no-underline shadow-btn-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-btn-white-hover" href="mailto:rintoandrews90@gmail.com">Contact Us</a>
+      <a class="inline-flex items-center gap-2 bg-transparent text-white py-[15px] px-8 rounded-full text-base font-bold no-underline border-[1.5px] border-white/50 transition-all duration-200 hover:border-white hover:-translate-y-0.5" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170" target="_blank" rel="noopener">Get the App</a>
+    </div>
+  </section>
 
-    <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date. We encourage you to review this policy periodically.</p>
-
-    <h2>Contact</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-    <ul>
-      <li>Email: <a href="mailto:rintoandrews90@gmail.com">rintoandrews90@gmail.com</a></li>
-    </ul>
-
-    <footer>
-      &copy; 2025 Bills Keeper. All rights reserved.
-    </footer>
-
-  </div>
 </body>
 </html>
