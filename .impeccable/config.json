@@ -8,6 +8,12 @@
         "value": "inter",
         "reason": "User confirmed Inter is intentional",
         "createdAt": "2026-07-12T21:26:59.454Z"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "material symbols rounded",
+        "reason": "User confirmed Material Symbols Rounded is intentional",
+        "createdAt": "2026-07-12T21:33:27.808Z"
       }
     ]
   }
