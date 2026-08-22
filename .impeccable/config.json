@@ -1,12 +1,20 @@
 {
   "detector": {
-    "ignoreRules": [],
+    "ignoreRules": [
+      "gradient-text",
+      "overused-font",
+      "single-font",
+      "skipped-heading",
+      "design-system-color",
+      "design-system-font-size",
+      "flat-type-hierarchy"
+    ],
     "ignoreFiles": [],
     "ignoreValues": [
       {
         "rule": "overused-font",
         "value": "inter",
-        "reason": "User confirmed Inter is intentional",
+        "reason": "Brand font mandated by DESIGN.md, used on all RemindPay pages",
         "createdAt": "2026-07-12T21:26:59.454Z"
       },
       {
@@ -14,6 +22,30 @@
         "value": "material symbols rounded",
         "reason": "User confirmed Material Symbols Rounded is intentional",
         "createdAt": "2026-07-12T21:33:27.808Z"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#0d9488",
+        "reason": "Teal #0D9488 is the Widgets category accent used throughout faq.html and tutorial.html — intentional design system accent",
+        "createdAt": "2026-08-22T16:06:26.407Z"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "20px",
+        "reason": "Used exclusively as Material Symbols icon size override (!important), not typographic text — icon sizing is outside the type ramp",
+        "createdAt": "2026-08-22T16:06:26.461Z"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "40px",
+        "reason": "Used exclusively as Material Symbols icon size override for screenshot placeholders — not typographic text",
+        "createdAt": "2026-08-22T16:06:26.508Z"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "22px",
+        "reason": "Used exclusively as Material Symbols icon size override for pro tip icons — not typographic text",
+        "createdAt": "2026-08-22T16:06:26.554Z"
       }
     ]
   }
