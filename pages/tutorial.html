@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>RemindPay Tutorials – Learn to Track Bills &amp; Warranties</title>
+  <meta name="description" content="Step-by-step tutorials for RemindPay: track bills, set up reminders, manage warranties, use widgets, and automate with Siri and Apple Pay." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://remindpay.app/pages/tutorial.html" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#2E6FA8" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="RemindPay" />
+  <meta property="og:title" content="RemindPay Tutorials – Learn to Track Bills &amp; Warranties" />
+  <meta property="og:description" content="Step-by-step tutorials for every RemindPay feature: bills, reminders, warranties, widgets, Siri, and more." />
+  <meta property="og:url" content="https://remindpay.app/pages/tutorial.html" />
+  <meta property="og:image" content="https://remindpay.app/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RemindPay Tutorials" />
+  <meta name="twitter:description" content="Step-by-step tutorials for every RemindPay feature." />
+  <meta name="twitter:image" content="https://remindpay.app/images/og-image.png" />
+
+  <meta name="apple-itunes-app" content="app-id=1609633170" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="RemindPay" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,0" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#2E6FA8', dark: '#1F5683', light: '#DCE8F2' },
+            brandtext: '#1A1A2E',
+            brandmuted: '#6B7280',
+            brandborder: '#E5E7EB',
+            brandbg: '#F9FAFB',
+            surface: '#F7F7F8',
+            success: '#34C759',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          screens: {
+            xs520: '520px',
+            md880: '880px',
+          },
+          boxShadow: {
+            'primary-md': '0 8px 24px rgba(46,111,168,0.30)',
+            'primary-lg': '0 14px 34px rgba(46,111,168,0.42)',
+            'card-hover': '0 20px 50px rgba(26,26,46,0.10)',
+            'pillar-hover': '0 16px 48px rgba(46,111,168,0.12)',
+            'btn-white': '0 8px 30px rgba(0,0,0,0.18)',
+            'btn-white-hover': '0 14px 40px rgba(0,0,0,0.25)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    .tcard { transition: transform 200ms ease, box-shadow 200ms ease; }
+    .tcard:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(26,26,46,0.10); }
+    .tcard-thumb { height: 210px; overflow: hidden; display: flex; align-items: flex-end; justify-content: center; }
+    .tcard-thumb img { width: 72%; max-width: 230px; height: 100%; object-fit: cover; object-position: top; }
+  </style>
+</head>
+<body class="text-brandtext bg-white">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-[100] bg-white/70 backdrop-blur-xl border-b border-black/[0.05]">
+    <div class="max-w-6xl mx-auto h-16 px-[5%] md:px-6 flex items-center justify-between">
+      <a class="flex items-center gap-2.5 no-underline" href="/">
+        <img class="w-9 h-9 object-cover block" src="../images/icon.png" alt="RemindPay" />
+        <span class="text-[17px] font-bold text-brandtext">RemindPay</span>
+      </a>
+      <a class="inline-flex items-center bg-primary text-white text-sm font-semibold px-4 py-2 rounded-full no-underline shadow-primary-md transition-all duration-200 hover:bg-primary-dark hover:-translate-y-0.5" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170">Download</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-[72px] pb-12 px-[5%] text-center bg-gradient-to-b from-[#EEF5FB] to-white">
+    <div class="max-w-[860px] mx-auto">
+      <span class="inline-flex items-center gap-1.5 bg-primary-light text-primary text-xs font-bold uppercase tracking-[1.5px] py-[5px] px-3.5 rounded-full border border-primary/30">Learn</span>
+      <h1 class="text-[clamp(36px,5vw,56px)] font-black leading-[1.15] tracking-[-1.5px] mt-5 mb-4 pb-[0.08em] bg-gradient-to-br from-primary to-[#4789BC] bg-clip-text text-transparent">App Tutorials</h1>
+      <p class="text-[17px] text-brandmuted max-w-[540px] mx-auto leading-[1.65]">Step-by-step guides for every RemindPay feature, from adding your first bill to automating payments with Siri and Apple Pay.</p>
+    </div>
+  </section>
+
+  <!-- TUTORIALS GRID -->
+  <main class="px-[5%] pb-24">
+    <div class="max-w-[1100px] mx-auto pt-10 grid grid-cols-1 xs520:grid-cols-2 md880:grid-cols-3 gap-6">
+
+      <!-- 1: Get Started -->
+      <a href="faq.html#getting-started" class="tcard block bg-white border border-brandborder rounded-[20px] overflow-hidden no-underline">
+        <div class="tcard-thumb" style="background: linear-gradient(160deg, #E6F1F9 0%, #B3D3EC 100%);">
+          <img src="../images/home.png" alt="RemindPay home screen" loading="lazy" />
+        </div>
+        <div class="p-[22px]">
+          <h2 class="text-[18px] font-bold text-brandtext leading-snug mb-2">Get started with RemindPay</h2>
+          <p class="text-[14px] text-brandmuted leading-[1.65] mb-5">Add your first bill, set the amount and due date, and get your first reminder in under a minute.</p>
+          <div class="flex items-center gap-[7px]">
+            <span class="material-symbols-rounded text-primary !text-[17px]" style="font-variation-settings:'FILL' 1">rocket_launch</span>
+            <span class="text-[11px] font-bold text-primary uppercase tracking-[1.4px]">Getting Started</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 2: Reminders -->
+      <a href="faq.html#reminders" class="tcard block bg-white border border-brandborder rounded-[20px] overflow-hidden no-underline">
+        <div class="tcard-thumb" style="background: linear-gradient(160deg, #FFF7ED 0%, #FFD09A 100%);">
+          <img src="../images/home.png" alt="RemindPay reminders" loading="lazy" />
+        </div>
+        <div class="p-[22px]">
+          <h2 class="text-[18px] font-bold text-brandtext leading-snug mb-2">Set up reminders</h2>
+          <p class="text-[14px] text-brandmuted leading-[1.65] mb-5">Choose your notification time and how far in advance you're alerted: 1 day, 3 days, a week, or two weeks ahead.</p>
+          <div class="flex items-center gap-[7px]">
+            <span class="material-symbols-rounded !text-[17px]" style="font-variation-settings:'FILL' 1;color:#FF9500">notifications_active</span>
+            <span class="text-[11px] font-bold uppercase tracking-[1.4px]" style="color:#FF9500">Reminders</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 3: Warranties -->
+      <a href="faq.html#warranty-billing" class="tcard block bg-white border border-brandborder rounded-[20px] overflow-hidden no-underline">
+        <div class="tcard-thumb" style="background: linear-gradient(160deg, #F5F3FF 0%, #C9BAFA 100%);">
+          <img src="../images/warrenty.png" alt="Warranty cards" loading="lazy" />
+        </div>
+        <div class="p-[22px]">
+          <h2 class="text-[18px] font-bold text-brandtext leading-snug mb-2">Manage warranty cards</h2>
+          <p class="text-[14px] text-brandmuted leading-[1.65] mb-5">Add warranty cards, attach receipts, and get notified 30 days before a warranty expires. Never lose coverage.</p>
+          <div class="flex items-center gap-[7px]">
+            <span class="material-symbols-rounded !text-[17px]" style="font-variation-settings:'FILL' 1;color:#8B5CF6">shield_with_heart</span>
+            <span class="text-[11px] font-bold uppercase tracking-[1.4px]" style="color:#8B5CF6">Warranty</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 4: Widgets -->
+      <a href="faq.html#widget-setup" class="tcard block bg-white border border-brandborder rounded-[20px] overflow-hidden no-underline">
+        <div class="tcard-thumb" style="background: linear-gradient(160deg, #F0FDFA 0%, #81E6D9 100%);">
+          <img src="../images/widgets.png" alt="Home Screen widget" loading="lazy" />
+        </div>
+        <div class="p-[22px]">
+          <h2 class="text-[18px] font-bold text-brandtext leading-snug mb-2">Add Home Screen widgets</h2>
+          <p class="text-[14px] text-brandmuted leading-[1.65] mb-5">Put your upcoming bills on your Home Screen so you always know what's due, without opening the app.</p>
+          <div class="flex items-center gap-[7px]">
+            <span class="material-symbols-rounded !text-[17px]" style="font-variation-settings:'FILL' 1;color:#0D9488">widgets</span>
+            <span class="text-[11px] font-bold uppercase tracking-[1.4px]" style="color:#0D9488">Widgets</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 5: Siri -->
+      <a href="faq.html#siri-add-bill" class="tcard block bg-white border border-brandborder rounded-[20px] overflow-hidden no-underline">
+        <div class="tcard-thumb" style="background: linear-gradient(160deg, #FFF1F2 0%, #FECDD3 100%);">
+          <img src="../images/shortcuts.png" alt="Siri Shortcuts" loading="lazy" />
+        </div>
+        <div class="p-[22px]">
+          <h2 class="text-[18px] font-bold text-brandtext leading-snug mb-2">Use Siri Shortcuts</h2>
+          <p class="text-[14px] text-brandmuted leading-[1.65] mb-5">Add bills and log recurring payments hands-free. Just ask Siri, no tapping required.</p>
+          <div class="flex items-center gap-[7px]">
+            <span class="material-symbols-rounded !text-[17px]" style="font-variation-settings:'FILL' 1;color:#E11D48">mic</span>
+            <span class="text-[11px] font-bold uppercase tracking-[1.4px]" style="color:#E11D48">Siri Shortcuts</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 6: Apple Watch -->
+      <a href="faq.html#apple-watch-setup" class="tcard block bg-white border border-brandborder rounded-[20px] overflow-hidden no-underline">
+        <div class="tcard-thumb" style="background: linear-gradient(160deg, #E6F1F9 0%, #B3D3EC 100%);">
+          <img src="../images/phone.png" alt="Apple Watch companion" loading="lazy" />
+        </div>
+        <div class="p-[22px]">
+          <h2 class="text-[18px] font-bold text-brandtext leading-snug mb-2">Set up Apple Watch</h2>
+          <p class="text-[14px] text-brandmuted leading-[1.65] mb-5">Install Bills Keeper on your Apple Watch and check upcoming bills right from your wrist, anytime.</p>
+          <div class="flex items-center gap-[7px]">
+            <span class="material-symbols-rounded text-primary !text-[17px]" style="font-variation-settings:'FILL' 1">watch</span>
+            <span class="text-[11px] font-bold text-primary uppercase tracking-[1.4px]">Apple Watch</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 7: Reports -->
+      <a href="/#reports" class="tcard block bg-white border border-brandborder rounded-[20px] overflow-hidden no-underline">
+        <div class="tcard-thumb" style="background: linear-gradient(160deg, #F0FDF4 0%, #86EFAC 100%);">
+          <img src="../images/charts.png" alt="Spending reports" loading="lazy" />
+        </div>
+        <div class="p-[22px]">
+          <h2 class="text-[18px] font-bold text-brandtext leading-snug mb-2">Track spending with reports</h2>
+          <p class="text-[14px] text-brandmuted leading-[1.65] mb-5">View spending trends, category breakdowns, and monthly summaries to understand where your money goes.</p>
+          <div class="flex items-center gap-[7px]">
+            <span class="material-symbols-rounded !text-[17px]" style="font-variation-settings:'FILL' 1;color:#16A34A">bar_chart</span>
+            <span class="text-[11px] font-bold uppercase tracking-[1.4px]" style="color:#16A34A">Reports</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 8: Apple Pay -->
+      <a href="faq.html#apple-pay-logging" class="tcard block bg-white border border-brandborder rounded-[20px] overflow-hidden no-underline">
+        <div class="tcard-thumb" style="background: linear-gradient(160deg, #FFF7ED 0%, #FFD09A 100%);">
+          <img src="../images/shortcuts.png" alt="Apple Pay auto-logging" loading="lazy" />
+        </div>
+        <div class="p-[22px]">
+          <h2 class="text-[18px] font-bold text-brandtext leading-snug mb-2">Apple Pay auto-logging</h2>
+          <p class="text-[14px] text-brandmuted leading-[1.65] mb-5">Automatically log every Apple Pay transaction in RemindPay using a simple Shortcuts automation.</p>
+          <div class="flex items-center gap-[7px]">
+            <span class="material-symbols-rounded !text-[17px]" style="font-variation-settings:'FILL' 1;color:#FF9500">contactless</span>
+            <span class="text-[11px] font-bold uppercase tracking-[1.4px]" style="color:#FF9500">Apple Pay</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 9: Recurring Bills -->
+      <a href="faq.html#siri-recurring-bill" class="tcard block bg-white border border-brandborder rounded-[20px] overflow-hidden no-underline">
+        <div class="tcard-thumb" style="background: linear-gradient(160deg, #F5F3FF 0%, #C9BAFA 100%);">
+          <img src="../images/home.png" alt="Recurring bills" loading="lazy" />
+        </div>
+        <div class="p-[22px]">
+          <h2 class="text-[18px] font-bold text-brandtext leading-snug mb-2">Set up recurring bills</h2>
+          <p class="text-[14px] text-brandmuted leading-[1.65] mb-5">Add bills that repeat on a weekly, monthly, or custom schedule. RemindPay handles every future reminder automatically.</p>
+          <div class="flex items-center gap-[7px]">
+            <span class="material-symbols-rounded !text-[17px]" style="font-variation-settings:'FILL' 1;color:#8B5CF6">autorenew</span>
+            <span class="text-[11px] font-bold uppercase tracking-[1.4px]" style="color:#8B5CF6">Recurring Bills</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- CTA BANNER -->
+  <section class="py-[80px] px-[5%] bg-gradient-to-br from-primary to-[#4789BC] text-center text-white">
+    <h2 class="text-[clamp(26px,3.5vw,38px)] font-black tracking-[-1px] mb-3">Ready to take control of your bills?</h2>
+    <p class="text-base opacity-85 mb-7">Download RemindPay and never miss a payment or warranty again.</p>
+    <div class="flex gap-3.5 justify-center flex-wrap">
+      <a class="inline-flex items-center gap-2 bg-white text-primary py-4 px-9 rounded-full text-base font-bold no-underline shadow-btn-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-btn-white-hover" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170" target="_blank" rel="noopener">Download on the App Store</a>
+      <a class="inline-flex items-center gap-2 bg-transparent text-white py-[15px] px-8 rounded-full text-base font-bold no-underline border-[1.5px] border-white/50 transition-all duration-200 hover:border-white hover:-translate-y-0.5" href="faq.html">View FAQ</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brandtext text-white/70 pt-[60px] pb-10 px-[5%]">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 xs520:grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-12">
+      <div>
+        <img class="w-11 h-11 object-cover block mb-4 shadow-sm" src="../images/icon.png" alt="RemindPay" />
+        <div class="text-[17px] font-bold text-white mb-3 tracking-[-0.3px]">RemindPay</div>
+        <p class="text-sm leading-[1.75] max-w-[280px] text-white/55">The simplest way to track bills and warranties, set reminders, and stay on top of every payment on your Apple devices.</p>
+      </div>
+      <div>
+        <h4 class="text-[13px] font-bold text-white uppercase tracking-[1px] mb-5">Features</h4>
+        <ul class="list-none flex flex-col gap-3">
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="/#bills">Bill Tracking</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="/#bills">Reminders</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="/#reports">Reports</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="/#widgets">Widgets</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="/#warranty">Warranty Cards</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="/#integrations">Siri Shortcuts</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[13px] font-bold text-white uppercase tracking-[1px] mb-5">Platforms</h4>
+        <ul class="list-none flex flex-col gap-3">
+          <li class="text-sm text-white/55">iPhone</li>
+          <li class="text-sm text-white/55">iPad</li>
+          <li class="text-sm text-white/55">Apple Watch</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[13px] font-bold text-white uppercase tracking-[1px] mb-5">Company</h4>
+        <ul class="list-none flex flex-col gap-3">
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170" target="_blank" rel="noopener">App Store</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="faq.html">FAQ</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="/PrivacyPolicy.html">Privacy Policy</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="/TermsOfUse.html">Terms of Use</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="mailto:rintoandrews90@gmail.com">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto pt-7 border-t border-white/10 flex justify-between items-center text-[13px] flex-wrap gap-3 text-white/45">
+      <span>© 2026 RemindPay. All rights reserved.</span>
+      <span>Made with ♥ for Apple users everywhere</span>
+    </div>
+  </footer>
+
+</body>
+</html>
