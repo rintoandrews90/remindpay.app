@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>What's New in RemindPay – Release Notes</title>
+  <meta name="description" content="Release notes for RemindPay: every update to the bill and warranty tracker, from multi-currency bills and calendar view to warranty cards, Siri Shortcuts, and widgets." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://remindpay.app/pages/changelog.html" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#2E6FA8" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="RemindPay" />
+  <meta property="og:title" content="What's New in RemindPay – Release Notes" />
+  <meta property="og:description" content="Every RemindPay update, version by version." />
+  <meta property="og:url" content="https://remindpay.app/pages/changelog.html" />
+  <meta property="og:image" content="https://remindpay.app/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What's New in RemindPay" />
+  <meta name="twitter:description" content="Every RemindPay update, version by version." />
+  <meta name="twitter:image" content="https://remindpay.app/images/og-image.png" />
+
+  <meta name="apple-itunes-app" content="app-id=1609633170" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="RemindPay" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,0" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#2E6FA8', dark: '#1F5683', light: '#DCE8F2' },
+            brandtext: '#1A1A2E',
+            brandmuted: '#6B7280',
+            brandborder: '#E5E7EB',
+            brandbg: '#F9FAFB',
+            surface: '#F7F7F8',
+            success: '#34C759',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          screens: {
+            xs520: '520px',
+            md880: '880px',
+          },
+          boxShadow: {
+            'primary-md': '0 8px 24px rgba(46,111,168,0.30)',
+            'primary-lg': '0 14px 34px rgba(46,111,168,0.42)',
+            'card-hover': '0 20px 50px rgba(26,26,46,0.10)',
+            'pillar-hover': '0 16px 48px rgba(46,111,168,0.12)',
+            'btn-white': '0 8px 30px rgba(0,0,0,0.18)',
+            'btn-white-hover': '0 14px 40px rgba(0,0,0,0.25)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.6; }
+
+    /* Timeline rail — the vertical line runs behind the release dots */
+    .rail { position: relative; }
+    .rail::before {
+      content: ''; position: absolute; top: 14px; bottom: 0; left: 7px;
+      width: 2px; background: linear-gradient(to bottom, #DCE8F2 0%, #DCE8F2 85%, transparent 100%);
+    }
+    .rel-dot {
+      position: absolute; left: 0; top: 7px; width: 16px; height: 16px; border-radius: 9999px;
+      background: #fff; border: 2px solid #DCE8F2; box-sizing: border-box;
+    }
+    .rel-dot--latest { border-color: #2E6FA8; background: #2E6FA8; box-shadow: 0 0 0 5px rgba(46,111,168,0.14); }
+
+    .rcard { transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease; }
+    .rcard:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(26,26,46,0.10); }
+
+    @media (min-width: 880px) {
+      .rail::before { left: 103px; }
+      .rel-dot { left: 96px; }
+    }
+  </style>
+</head>
+<body class="text-brandtext bg-white">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-[100] bg-white/70 backdrop-blur-xl border-b border-black/[0.05]">
+    <div class="max-w-6xl mx-auto h-16 px-[5%] md:px-6 flex items-center justify-between">
+      <a class="flex items-center gap-2.5 no-underline" href="/">
+        <img class="w-9 h-9 object-cover block" src="../images/icon.png" alt="RemindPay" />
+        <span class="text-[17px] font-bold text-brandtext">RemindPay</span>
+      </a>
+      <a class="inline-flex items-center bg-primary text-white text-sm font-semibold px-4 py-2 rounded-full no-underline shadow-primary-md transition-all duration-200 hover:bg-primary-dark hover:-translate-y-0.5" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170">Download</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-[72px] pb-12 px-[5%] text-center bg-gradient-to-b from-[#EEF5FB] to-white">
+    <div class="max-w-[860px] mx-auto">
+      <span class="inline-flex items-center gap-1.5 bg-primary-light text-primary text-xs font-bold uppercase tracking-[1.5px] py-[5px] px-3.5 rounded-full border border-primary/30">Releases</span>
+      <h1 class="text-[clamp(36px,5vw,56px)] font-black leading-[1.15] tracking-[-1.5px] mt-5 mb-4 pb-[0.08em] bg-gradient-to-br from-primary to-[#4789BC] bg-clip-text text-transparent">What's New</h1>
+      <p class="text-[17px] text-brandmuted max-w-[560px] mx-auto leading-[1.65]">Every RemindPay update, version by version — new features, refinements, and fixes as they shipped to the App Store.</p>
+      <div class="mt-7 inline-flex items-center gap-2 bg-white border border-brandborder rounded-full py-2 px-4 text-[13px] font-semibold text-brandmuted">
+        <span class="w-2 h-2 rounded-full bg-success"></span>
+        Latest version <span class="text-brandtext">3.4.31</span>
+        <span class="text-brandborder">·</span>
+        <time datetime="2026-10-28">October 28, 2026</time>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <main class="px-[5%] pb-24">
+    <div class="max-w-[840px] mx-auto pt-6 rail flex flex-col gap-7">
+
+      <!-- 3.4.31 -->
+      <article id="v3-4-31" class="relative pl-10 md880:pl-[136px] scroll-mt-24">
+        <span class="rel-dot rel-dot--latest"></span>
+        <div class="md880:absolute md880:left-0 md880:top-[5px] md880:w-[76px] md880:text-right">
+          <span class="inline-flex md880:hidden items-center bg-primary text-white text-[12px] font-bold py-1 px-2.5 rounded-full tracking-[0.2px]">3.4.31</span>
+          <span class="hidden md880:inline-block text-[13px] font-bold text-primary">3.4.31</span>
+        </div>
+        <div class="rcard bg-white border border-brandborder rounded-[20px] p-6 md:p-7">
+          <div class="flex items-center gap-2.5 flex-wrap mb-4">
+            <time class="text-[13px] font-semibold text-brandmuted" datetime="2026-10-28">October 28, 2026</time>
+            <span class="inline-flex items-center bg-primary-light text-primary text-[11px] font-bold uppercase tracking-[1.2px] py-[3px] px-2.5 rounded-full border border-primary/30">Latest</span>
+          </div>
+          <h2 class="text-[20px] font-extrabold text-brandtext tracking-[-0.4px] leading-snug mb-4">Reminders, set up your way</h2>
+          <ul class="list-none flex flex-col gap-3.5">
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded text-primary !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1">notifications_active</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Reminders Set Up Your Way</strong> — The first-run screen now asks when you want to hear about a bill, instead of only asking whether notifications may be turned on.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded text-primary !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1">schedule</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Pick Your Lead Time</strong> — On the due date, a day before, three days, a week or two weeks ahead. Whichever you choose becomes the starting point for every new bill.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded text-primary !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1">save</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Your Choices Are Kept</strong> — Set the hour reminders arrive, and both answers are saved even if you decide not to turn notifications on.</p>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3.4.30 -->
+      <article id="v3-4-30" class="relative pl-10 md880:pl-[136px] scroll-mt-24">
+        <span class="rel-dot"></span>
+        <div class="md880:absolute md880:left-0 md880:top-[5px] md880:w-[76px] md880:text-right">
+          <span class="inline-flex md880:hidden items-center bg-brandbg text-brandtext text-[12px] font-bold py-1 px-2.5 rounded-full border border-brandborder tracking-[0.2px]">3.4.30</span>
+          <span class="hidden md880:inline-block text-[13px] font-bold text-brandmuted">3.4.30</span>
+        </div>
+        <div class="rcard bg-white border border-brandborder rounded-[20px] p-6 md:p-7">
+          <time class="block text-[13px] font-semibold text-brandmuted mb-4" datetime="2026-10-22">October 22, 2026</time>
+          <h2 class="text-[20px] font-extrabold text-brandtext tracking-[-0.4px] leading-snug mb-4">Income reads as received</h2>
+          <ul class="list-none flex flex-col gap-3.5">
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#16A34A">savings</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Income Now Says Received</strong> — Money arriving is not money paid, so income entries read Received and Not Received instead of Paid and Unpaid — on Home, in your lists, on the calendar and on the bill itself, including every occurrence of a recurring salary.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#16A34A">forward_to_inbox</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Feedback Straight to Support</strong> — The Feedback row in Settings now opens your mail app addressed to our support team, with your app version and iOS version already filled in.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#16A34A">translate</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Translated Everywhere</strong> — A bill status that stayed in English whatever your language is now translated.</p>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3.4.29 -->
+      <article id="v3-4-29" class="relative pl-10 md880:pl-[136px] scroll-mt-24">
+        <span class="rel-dot"></span>
+        <div class="md880:absolute md880:left-0 md880:top-[5px] md880:w-[76px] md880:text-right">
+          <span class="inline-flex md880:hidden items-center bg-brandbg text-brandtext text-[12px] font-bold py-1 px-2.5 rounded-full border border-brandborder tracking-[0.2px]">3.4.29</span>
+          <span class="hidden md880:inline-block text-[13px] font-bold text-brandmuted">3.4.29</span>
+        </div>
+        <div class="rcard bg-white border border-brandborder rounded-[20px] p-6 md:p-7">
+          <div class="flex items-center gap-2.5 flex-wrap mb-4">
+            <time class="text-[13px] font-semibold text-brandmuted" datetime="2026-10-20">October 20, 2026</time>
+            <span class="inline-flex items-center text-[11px] font-bold uppercase tracking-[1.2px] py-[3px] px-2.5 rounded-full border" style="background:#FFF7ED;color:#C2410C;border-color:rgba(255,149,0,0.35)">New feature</span>
+          </div>
+          <h2 class="text-[20px] font-extrabold text-brandtext tracking-[-0.4px] leading-snug mb-4">A currency for every bill</h2>
+          <ul class="list-none flex flex-col gap-3.5">
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#FF9500">currency_exchange</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">A Currency for Every Bill</strong> — Each bill can now be saved in the currency you actually pay it in, chosen from the same list as your display currency.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#FF9500">compare_arrows</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">See Both at Once</strong> — A bill in another currency shows its own amount with the equivalent in yours right beside it, on the bill, in your lists and on Home.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#FF9500">functions</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Totals That Add Up</strong> — Summaries, charts and the Apple Watch app convert every bill into your currency before adding, so mixed-currency totals come out right.</p>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3.4.25 -->
+      <article id="v3-4-25" class="relative pl-10 md880:pl-[136px] scroll-mt-24">
+        <span class="rel-dot"></span>
+        <div class="md880:absolute md880:left-0 md880:top-[5px] md880:w-[76px] md880:text-right">
+          <span class="inline-flex md880:hidden items-center bg-brandbg text-brandtext text-[12px] font-bold py-1 px-2.5 rounded-full border border-brandborder tracking-[0.2px]">3.4.25</span>
+          <span class="hidden md880:inline-block text-[13px] font-bold text-brandmuted">3.4.25</span>
+        </div>
+        <div class="rcard bg-white border border-brandborder rounded-[20px] p-6 md:p-7">
+          <time class="block text-[13px] font-semibold text-brandmuted mb-4" datetime="2026-09-05">September 5, 2026</time>
+          <h2 class="text-[20px] font-extrabold text-brandtext tracking-[-0.4px] leading-snug mb-4">Speaks your language</h2>
+          <ul class="list-none flex flex-col gap-3.5">
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#8B5CF6">translate</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Speaks Your Language</strong> — Categories, labels, reminder options, warranty details, and Siri phrases are now fully translated, so the whole app reads naturally in every supported language.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#8B5CF6">calendar_month</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">New Yearly Plan</strong> — A yearly option now sits alongside monthly and lifetime, so you can pick the plan that fits how you use RemindPay.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#8B5CF6">mic</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Smarter Siri</strong> — Logging a payment with Siri now uses your own Accounts instead of generic payment modes, so spoken entries land in the right place.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#8B5CF6">grid_view</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Easier Warranty Categories</strong> — Choosing a warranty category now opens a searchable grid picker instead of a cramped dropdown menu.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#8B5CF6">swipe_right</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Smoother Warranty Editing</strong> — Adding or editing a warranty opens as a full screen with a natural back swipe, matching the rest of the app.</p>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3.4.24 -->
+      <article id="v3-4-24" class="relative pl-10 md880:pl-[136px] scroll-mt-24">
+        <span class="rel-dot"></span>
+        <div class="md880:absolute md880:left-0 md880:top-[5px] md880:w-[76px] md880:text-right">
+          <span class="inline-flex md880:hidden items-center bg-brandbg text-brandtext text-[12px] font-bold py-1 px-2.5 rounded-full border border-brandborder tracking-[0.2px]">3.4.24</span>
+          <span class="hidden md880:inline-block text-[13px] font-bold text-brandmuted">3.4.24</span>
+        </div>
+        <div class="rcard bg-white border border-brandborder rounded-[20px] p-6 md:p-7">
+          <div class="flex items-center gap-2.5 flex-wrap mb-4">
+            <time class="text-[13px] font-semibold text-brandmuted" datetime="2026-08-27">August 27, 2026</time>
+            <span class="inline-flex items-center text-[11px] font-bold uppercase tracking-[1.2px] py-[3px] px-2.5 rounded-full border" style="background:#FFF7ED;color:#C2410C;border-color:rgba(255,149,0,0.35)">New feature</span>
+          </div>
+          <h2 class="text-[20px] font-extrabold text-brandtext tracking-[-0.4px] leading-snug mb-4">Calendar view and richer bill details</h2>
+          <ul class="list-none flex flex-col gap-3.5">
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded text-primary !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1">calendar_month</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Calendar View</strong> — Bills now appear as colour-coded dots on the calendar so you can spot payment dates at a glance.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded text-primary !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1">bar_chart</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Chart Navigation</strong> — Browse spending by day, week, month, or year using the new time-period strip below the chart options.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded text-primary !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1">autorenew</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Recurring Bill Progress</strong> — A progress bar in the bill detail header shows how many payments are paid, missed, and remaining.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded text-primary !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1">task_alt</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Refreshed Actions</strong> — Bill detail now has a prominent Mark Paid button and circular icons for edit, share, and delete.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded text-primary !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1">format_list_bulleted</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Refreshed Bill List</strong> — Income amounts are highlighted in green, bill status appears below each title, and status filters are redesigned as scrollable pills.</p>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3.4.22 -->
+      <article id="v3-4-22" class="relative pl-10 md880:pl-[136px] scroll-mt-24">
+        <span class="rel-dot"></span>
+        <div class="md880:absolute md880:left-0 md880:top-[5px] md880:w-[76px] md880:text-right">
+          <span class="inline-flex md880:hidden items-center bg-brandbg text-brandtext text-[12px] font-bold py-1 px-2.5 rounded-full border border-brandborder tracking-[0.2px]">3.4.22</span>
+          <span class="hidden md880:inline-block text-[13px] font-bold text-brandmuted">3.4.22</span>
+        </div>
+        <div class="rcard bg-white border border-brandborder rounded-[20px] p-6 md:p-7">
+          <div class="flex items-center gap-2.5 flex-wrap mb-4">
+            <time class="text-[13px] font-semibold text-brandmuted" datetime="2026-08-21">August 21, 2026</time>
+            <span class="inline-flex items-center text-[11px] font-bold uppercase tracking-[1.2px] py-[3px] px-2.5 rounded-full border" style="background:#FFF7ED;color:#C2410C;border-color:rgba(255,149,0,0.35)">New feature</span>
+          </div>
+          <h2 class="text-[20px] font-extrabold text-brandtext tracking-[-0.4px] leading-snug mb-4">RemindPay on the desktop</h2>
+          <ul class="list-none flex flex-col gap-3.5">
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#E11D48">desktop_mac</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Desktop App</strong> — RemindPay is now on desktop. View overdue, due today, and upcoming bills right from your menu bar.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#E11D48">workspace_premium</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Monthly Subscription</strong> — Premium is now available as a monthly plan, alongside the one-time lifetime purchase. Choose the plan that works best for you.</p>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3.4.19 -->
+      <article id="v3-4-19" class="relative pl-10 md880:pl-[136px] scroll-mt-24">
+        <span class="rel-dot"></span>
+        <div class="md880:absolute md880:left-0 md880:top-[5px] md880:w-[76px] md880:text-right">
+          <span class="inline-flex md880:hidden items-center bg-brandbg text-brandtext text-[12px] font-bold py-1 px-2.5 rounded-full border border-brandborder tracking-[0.2px]">3.4.19</span>
+          <span class="hidden md880:inline-block text-[13px] font-bold text-brandmuted">3.4.19</span>
+        </div>
+        <div class="rcard bg-white border border-brandborder rounded-[20px] p-6 md:p-7">
+          <time class="block text-[13px] font-semibold text-brandmuted mb-4" datetime="2026-08-01">August 1, 2026</time>
+          <h2 class="text-[20px] font-extrabold text-brandtext tracking-[-0.4px] leading-snug mb-4">An all-new Home screen</h2>
+          <ul class="list-none flex flex-col gap-3.5">
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded text-primary !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1">home</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Home Screen</strong> — All-new UI redesign for a cleaner, more intuitive overview of your bills.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded text-primary !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1">receipt_long</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Bill Details</strong> — Completely redesigned with a fresh look for a better experience.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded text-primary !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1">build</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Bug Fixes</strong> — Many improvements for better usability and stability.</p>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3.4.18 -->
+      <article id="v3-4-18" class="relative pl-10 md880:pl-[136px] scroll-mt-24">
+        <span class="rel-dot"></span>
+        <div class="md880:absolute md880:left-0 md880:top-[5px] md880:w-[76px] md880:text-right">
+          <span class="inline-flex md880:hidden items-center bg-brandbg text-brandtext text-[12px] font-bold py-1 px-2.5 rounded-full border border-brandborder tracking-[0.2px]">3.4.18</span>
+          <span class="hidden md880:inline-block text-[13px] font-bold text-brandmuted">3.4.18</span>
+        </div>
+        <div class="rcard bg-white border border-brandborder rounded-[20px] p-6 md:p-7">
+          <time class="block text-[13px] font-semibold text-brandmuted mb-4" datetime="2026-07-25">July 25, 2026</time>
+          <h2 class="text-[20px] font-extrabold text-brandtext tracking-[-0.4px] leading-snug mb-4">Redesigned warranty cards</h2>
+          <ul class="list-none flex flex-col gap-3.5">
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#8B5CF6">notifications_active</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Notifications</strong> — Choose your preferred reminder time when enabling bill alerts.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#8B5CF6">shield_with_heart</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Warranty Cards</strong> — Redesigned with status badge, accent bar, and purchased · expires · remaining columns.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#8B5CF6">donut_large</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Warranty Overview</strong> — New ring chart showing active, expiring soon, expired, and open claims.</p>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3.4.16 -->
+      <article id="v3-4-16" class="relative pl-10 md880:pl-[136px] scroll-mt-24">
+        <span class="rel-dot"></span>
+        <div class="md880:absolute md880:left-0 md880:top-[5px] md880:w-[76px] md880:text-right">
+          <span class="inline-flex md880:hidden items-center bg-brandbg text-brandtext text-[12px] font-bold py-1 px-2.5 rounded-full border border-brandborder tracking-[0.2px]">3.4.16</span>
+          <span class="hidden md880:inline-block text-[13px] font-bold text-brandmuted">3.4.16</span>
+        </div>
+        <div class="rcard bg-white border border-brandborder rounded-[20px] p-6 md:p-7">
+          <time class="block text-[13px] font-semibold text-brandmuted mb-4" datetime="2026-07-20">July 20, 2026</time>
+          <h2 class="text-[20px] font-extrabold text-brandtext tracking-[-0.4px] leading-snug mb-4">Warranty tracking and PDF export</h2>
+          <ul class="list-none flex flex-col gap-3.5">
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#16A34A">shield_with_heart</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Warranties</strong> — Track product warranties with expiry alerts, at-a-glance stats, and PDF export.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#16A34A">autorenew</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Recurring Bills</strong> — Payment schedule now shows all months from the start date, not just upcoming ones.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#16A34A">receipt_long</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Bill Details</strong> — Refreshed header with cleaner action buttons.</p>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3.4.5 -->
+      <article id="v3-4-5" class="relative pl-10 md880:pl-[136px] scroll-mt-24">
+        <span class="rel-dot"></span>
+        <div class="md880:absolute md880:left-0 md880:top-[5px] md880:w-[76px] md880:text-right">
+          <span class="inline-flex md880:hidden items-center bg-brandbg text-brandtext text-[12px] font-bold py-1 px-2.5 rounded-full border border-brandborder tracking-[0.2px]">3.4.5</span>
+          <span class="hidden md880:inline-block text-[13px] font-bold text-brandmuted">3.4.5</span>
+        </div>
+        <div class="rcard bg-white border border-brandborder rounded-[20px] p-6 md:p-7">
+          <time class="block text-[13px] font-semibold text-brandmuted mb-4" datetime="2026-07-01">July 1, 2026</time>
+          <h2 class="text-[20px] font-extrabold text-brandtext tracking-[-0.4px] leading-snug mb-4">Autopay bills and warranty contacts</h2>
+          <ul class="list-none flex flex-col gap-3.5">
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded text-primary !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1">sync_alt</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]">Bills can now be marked as autopay, so hands-off payments stay out of your reminders.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded text-primary !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1">contact_support</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]">Warranty cards now include phone, email, and website for faster support access.</p>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3.4.4 -->
+      <article id="v3-4-4" class="relative pl-10 md880:pl-[136px] scroll-mt-24">
+        <span class="rel-dot"></span>
+        <div class="md880:absolute md880:left-0 md880:top-[5px] md880:w-[76px] md880:text-right">
+          <span class="inline-flex md880:hidden items-center bg-brandbg text-brandtext text-[12px] font-bold py-1 px-2.5 rounded-full border border-brandborder tracking-[0.2px]">3.4.4</span>
+          <span class="hidden md880:inline-block text-[13px] font-bold text-brandmuted">3.4.4</span>
+        </div>
+        <div class="rcard bg-white border border-brandborder rounded-[20px] p-6 md:p-7">
+          <time class="block text-[13px] font-semibold text-brandmuted mb-3" datetime="2026-06-26">June 26, 2026</time>
+          <p class="text-[15px] text-brandmuted leading-[1.65]">Polished many small UX details throughout the app — cleaner screens, clearer labels, and smoother interactions.</p>
+        </div>
+      </article>
+
+      <!-- 3.4.0 – 3.4.3 -->
+      <article id="v3-4-0" class="relative pl-10 md880:pl-[136px] scroll-mt-24">
+        <span class="rel-dot"></span>
+        <div class="md880:absolute md880:left-0 md880:top-[5px] md880:w-[76px] md880:text-right">
+          <span class="inline-flex md880:hidden items-center bg-brandbg text-brandtext text-[12px] font-bold py-1 px-2.5 rounded-full border border-brandborder tracking-[0.2px]">3.4.0 – 3.4.3</span>
+          <span class="hidden md880:inline-block text-[13px] font-bold text-brandmuted leading-tight">3.4.0<br />– 3.4.3</span>
+        </div>
+        <div class="rcard bg-white border border-brandborder rounded-[20px] p-6 md:p-7">
+          <time class="block text-[13px] font-semibold text-brandmuted mb-3" datetime="2026-06-24">June 13 – 24, 2026</time>
+          <p class="text-[15px] text-brandmuted leading-[1.65]">Bug fixes and UI improvements.</p>
+        </div>
+      </article>
+
+      <!-- 3.3.48 – 3.3.50 -->
+      <article id="v3-3-50" class="relative pl-10 md880:pl-[136px] scroll-mt-24">
+        <span class="rel-dot"></span>
+        <div class="md880:absolute md880:left-0 md880:top-[5px] md880:w-[76px] md880:text-right">
+          <span class="inline-flex md880:hidden items-center bg-brandbg text-brandtext text-[12px] font-bold py-1 px-2.5 rounded-full border border-brandborder tracking-[0.2px]">3.3.48 – 3.3.50</span>
+          <span class="hidden md880:inline-block text-[13px] font-bold text-brandmuted leading-tight">3.3.48<br />– 3.3.50</span>
+        </div>
+        <div class="rcard bg-white border border-brandborder rounded-[20px] p-6 md:p-7">
+          <time class="block text-[13px] font-semibold text-brandmuted mb-4" datetime="2026-06-11">June 8 – 11, 2026</time>
+          <h2 class="text-[20px] font-extrabold text-brandtext tracking-[-0.4px] leading-snug mb-3">UI &amp; usability improvements</h2>
+          <p class="text-[15px] text-brandmuted leading-[1.65]">A cleaner, more polished experience throughout the app — refined icons, improved dark mode colours, smarter form validation with helpful alerts, and smoother interactions across every screen.</p>
+        </div>
+      </article>
+
+      <!-- 3.3.47 -->
+      <article id="v3-3-47" class="relative pl-10 md880:pl-[136px] scroll-mt-24">
+        <span class="rel-dot"></span>
+        <div class="md880:absolute md880:left-0 md880:top-[5px] md880:w-[76px] md880:text-right">
+          <span class="inline-flex md880:hidden items-center bg-brandbg text-brandtext text-[12px] font-bold py-1 px-2.5 rounded-full border border-brandborder tracking-[0.2px]">3.3.47</span>
+          <span class="hidden md880:inline-block text-[13px] font-bold text-brandmuted">3.3.47</span>
+        </div>
+        <div class="rcard bg-white border border-brandborder rounded-[20px] p-6 md:p-7">
+          <div class="flex items-center gap-2.5 flex-wrap mb-4">
+            <time class="text-[13px] font-semibold text-brandmuted" datetime="2026-06-06">June 6, 2026</time>
+            <span class="inline-flex items-center text-[11px] font-bold uppercase tracking-[1.2px] py-[3px] px-2.5 rounded-full border" style="background:#FFF7ED;color:#C2410C;border-color:rgba(255,149,0,0.35)">Major release</span>
+          </div>
+          <h2 class="text-[20px] font-extrabold text-brandtext tracking-[-0.4px] leading-snug mb-4">Warranty cards, Siri, and Apple Pay</h2>
+          <ul class="list-none flex flex-col gap-4">
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#8B5CF6">shield_with_heart</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Warranty Cards</strong> — You can now manage all your product warranties in RemindPay. Add warranty cards, track expiry dates, and get a clear view of what's still covered.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#E11D48">mic</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Siri Shortcuts</strong> — Ask Siri to add a bill or set up a recurring payment — hands-free, without opening the app.</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-rounded !text-[18px] shrink-0 mt-[3px]" style="font-variation-settings:'FILL' 1;color:#FF9500">contactless</span>
+              <p class="text-[15px] text-brandmuted leading-[1.65]"><strong class="font-semibold text-brandtext">Apple Pay Auto-Log</strong> — Every time you pay with Apple Pay, get a prompt to instantly log it in RemindPay. Set it up once in the new Integrations section in Settings.</p>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3.3.46 -->
+      <article id="v3-3-46" class="relative pl-10 md880:pl-[136px] scroll-mt-24">
+        <span class="rel-dot"></span>
+        <div class="md880:absolute md880:left-0 md880:top-[5px] md880:w-[76px] md880:text-right">
+          <span class="inline-flex md880:hidden items-center bg-brandbg text-brandtext text-[12px] font-bold py-1 px-2.5 rounded-full border border-brandborder tracking-[0.2px]">3.3.46</span>
+          <span class="hidden md880:inline-block text-[13px] font-bold text-brandmuted">3.3.46</span>
+        </div>
+        <div class="rcard bg-white border border-brandborder rounded-[20px] p-6 md:p-7">
+          <time class="block text-[13px] font-semibold text-brandmuted mb-4" datetime="2026-06-05">June 5, 2026</time>
+          <h2 class="text-[20px] font-extrabold text-brandtext tracking-[-0.4px] leading-snug mb-3">New languages</h2>
+          <p class="text-[15px] text-brandmuted leading-[1.65]">The app is now available in Arabic, Chinese (Simplified &amp; Traditional), Dutch, French, German, Hindi, Italian, Japanese, Korean, Portuguese, Russian, and Spanish.</p>
+        </div>
+      </article>
+
+      <!-- EARLIER -->
+      <div class="relative pl-10 md880:pl-[136px]">
+        <p class="text-[14px] text-brandmuted leading-[1.65] pt-1">Looking for something older? Earlier releases are listed on the <a class="text-primary font-semibold no-underline hover:underline" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170" target="_blank" rel="noopener">App Store version history</a>.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- CTA BANNER -->
+  <section class="py-[80px] px-[5%] bg-gradient-to-br from-primary to-[#4789BC] text-center text-white">
+    <h2 class="text-[clamp(26px,3.5vw,38px)] font-black tracking-[-1px] mb-3">Get the latest version</h2>
+    <p class="text-base opacity-85 mb-7">Update to RemindPay 3.4.31 and set your reminders exactly the way you want them.</p>
+    <div class="flex gap-3.5 justify-center flex-wrap">
+      <a class="inline-flex items-center gap-2 bg-white text-primary py-4 px-9 rounded-full text-base font-bold no-underline shadow-btn-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-btn-white-hover" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170" target="_blank" rel="noopener">Download on the App Store</a>
+      <a class="inline-flex items-center gap-2 bg-transparent text-white py-[15px] px-8 rounded-full text-base font-bold no-underline border-[1.5px] border-white/50 transition-all duration-200 hover:border-white hover:-translate-y-0.5" href="tutorial.html">View Tutorials</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brandtext text-white/70 pt-[60px] pb-10 px-[5%]">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 xs520:grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-12">
+      <div>
+        <img class="w-11 h-11 object-cover block mb-4 shadow-sm" src="../images/icon.png" alt="RemindPay" />
+        <div class="text-[17px] font-bold text-white mb-3 tracking-[-0.3px]">RemindPay</div>
+        <p class="text-sm leading-[1.75] max-w-[280px] text-white/55">The simplest way to track bills and warranties, set reminders, and stay on top of every payment on your Apple devices.</p>
+      </div>
+      <div>
+        <h4 class="text-[13px] font-bold text-white uppercase tracking-[1px] mb-5">Features</h4>
+        <ul class="list-none flex flex-col gap-3">
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="/#bills">Bill Tracking</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="/#bills">Reminders</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="/#reports">Reports</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="/#widgets">Widgets</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="/#warranty">Warranty Cards</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="/#integrations">Siri Shortcuts</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[13px] font-bold text-white uppercase tracking-[1px] mb-5">Platforms</h4>
+        <ul class="list-none flex flex-col gap-3">
+          <li class="text-sm text-white/55">iPhone</li>
+          <li class="text-sm text-white/55">iPad</li>
+          <li class="text-sm text-white/55">Apple Watch</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[13px] font-bold text-white uppercase tracking-[1px] mb-5">Company</h4>
+        <ul class="list-none flex flex-col gap-3">
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="https://apps.apple.com/us/app/remindpay-bills-warranty/id1609633170" target="_blank" rel="noopener">App Store</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="faq.html">FAQ</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="tutorial.html">Tutorials</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="changelog.html">What's New</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="/PrivacyPolicy.html">Privacy Policy</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="/TermsOfUse.html">Terms of Use</a></li>
+          <li><a class="text-sm text-white/55 no-underline hover:text-white transition-colors duration-200" href="mailto:rintoandrews90@gmail.com">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto pt-7 border-t border-white/10 flex justify-between items-center text-[13px] flex-wrap gap-3 text-white/45">
+      <span>© 2026 RemindPay. All rights reserved.</span>
+      <span>Made with ♥ for Apple users everywhere</span>
+    </div>
+  </footer>
+
+</body>
+</html>

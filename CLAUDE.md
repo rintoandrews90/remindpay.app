@@ -32,6 +32,7 @@ Root:
 
 `pages/`:
 - `faq.html` — FAQ page
+- `changelog.html` — "What's New" release-notes timeline. **Its content is generated from the iOS repo**, not written by hand — see below.
 - `tutorial.html` — tutorials index; links to all nine `tut-*.html` pages. Linked from the index nav and footer.
 - `tut-getting-started.html`, `tut-reminders.html`, `tut-warranty.html`, `tut-widgets.html`, `tut-reports.html`, `tut-apple-watch.html`, `tut-apple-pay.html`, `tut-siri.html`, `tut-recurring-bills.html` — tutorial detail pages
 
@@ -84,7 +85,28 @@ Elements with `data-animate` start invisible (via the `.js [data-animate]` CSS r
 - `.grad-avatar` — blue gradient fill for testimonial initials avatars
 - `.icon-glow-blue`, `.stat-num` — icon glow and gradient stat numerals
 
-Other pages style almost entirely with Tailwind utilities and define only what they need: `.tcard` / `.tcard-thumb` (`pages/tutorial.html`), `.rcard` (tutorial detail pages). `faq.html` and the legal pages define only base `body`/`html` rules. `.pcard` and friends are **not** available outside `index.html` — copy the utilities instead of reaching for the class.
+Other pages style almost entirely with Tailwind utilities and define only what they need: `.tcard` / `.tcard-thumb` (`pages/tutorial.html`), `.rcard` (tutorial detail pages and `changelog.html`), `.rail` / `.rel-dot` (`changelog.html`'s timeline). `faq.html` and the legal pages define only base `body`/`html` rules. `.pcard` and friends are **not** available outside `index.html` — copy the utilities instead of reaching for the class.
+
+## Updating the changelog page
+
+`pages/changelog.html` mirrors the App Store release notes, which live in the **iOS repo** at `~/Documents/Apps/RemindPay` (`Bills Keeper.xcodeproj`). That repo is tagged per version, and each tag holds that release's notes:
+
+```bash
+cd ~/Documents/Apps/RemindPay
+git tag | sort -V                                     # version-ordered release list
+git log -1 --format=%ad --date=short <tag>            # release date
+git show "<tag>:fastlane/whats_new/en-US.txt"         # that version's notes
+```
+
+Note the quotes/braces — in zsh, an unquoted `$t:fastlane` is parsed as a history modifier and silently returns nothing.
+
+Conventions the page follows:
+- Only versions with real notes are listed. `fastlane/whats_new/en-US.txt` first appears at tag `3.3.46`; everything older has none, so the page starts there and points at the App Store for earlier history.
+- Not every tag shipped. Tags whose notes duplicate a neighbour (resubmissions) are omitted, and runs of identical boilerplate are collapsed into one dated range entry (e.g. `3.4.0 – 3.4.3`).
+- Notes are used close to verbatim — this is shipped App Store copy, British spellings included.
+- `fastlane/changelog.txt` is **not** per-version; it has been the same text at every tag. Don't source from it.
+
+When a new version ships: add an entry at the top of the timeline, move the `rel-dot--latest` class and the `Latest` badge to it, and update the version/date in the hero chip, the CTA copy, and `sitemap.xml`.
 
 ## Design
 
@@ -102,7 +124,7 @@ Key constraints from `DESIGN.md`:
 
 `robots.txt` allows everything and points at `sitemap.xml`. `index.html` carries a `WebSite` JSON-LD block (`name: "RemindPay"`) so Google shows "RemindPay" rather than the bare domain.
 
-**`sitemap.xml` is out of date:** it lists only `/`, `pages/faq.html`, `TermsOfUse.html`, and `PrivacyPolicy.html` — `pages/tutorial.html` and the nine `tut-*.html` pages are missing, and all `lastmod` dates say `2026-07-31`. Add new pages here when you create them.
+`sitemap.xml` lists all 15 pages. Add new pages here when you create them.
 
 ## Notes
 
